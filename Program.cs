@@ -12,7 +12,7 @@ namespace CSharpExercises
                 Console.Write("Premi un tasto per proseguire");
                 Console.ReadKey();
 
-                string nowDate = DateTime.Today.Date.ToString(("dd/MM/yyyy")) , nowHour = DateTime.Now.ToString("HH:mm:ss");
+                string nowDate = DateTime.Today.Date.ToString(("dd/MM/yyyy")), nowHour = DateTime.Now.ToString("HH:mm:ss");
                 Console.WriteLine($"Oggi è il  {nowDate} e sono le ore {nowHour}");
             }
             {
@@ -27,9 +27,10 @@ namespace CSharpExercises
             {
                 // Scrivi un programma completo di namespace, che legge il tuo nome dagli argomenti di Main() e lo 
                 // ristampa trasformandolo in uppercase.Carica le modifiche sul repo Github.
-                if (args.Length > 0) {
+                if (args.Length > 0)
+                {
                     Console.WriteLine($"Il parametro passato è {args[0]}");
-                        }
+                }
                 else Console.WriteLine("Nessun parametro passato !");
             }
 
