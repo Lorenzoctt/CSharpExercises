@@ -8,9 +8,12 @@ namespace CSharpExercises
         {
 
             string aFriend = "Bill";
-
+            DateTime nowDate = DateTime.Today; 
             Console.WriteLine($"Hello {aFriend}");
-            
+            Console.WriteLine($"Oggi è il  {nowDate}");
+
+
+
 
 
         }
