@@ -6,9 +6,15 @@ namespace CSharpExercises
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            string aFriend = "Bill";
+
+            Console.WriteLine($"Hello {aFriend}");
             
+
 
         }
     }
 }
+
+
