@@ -5,4 +5,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="Classes\ClassDiagram.cd">
+      <CustomToolNamespace></CustomToolNamespace>
+    </None>
+  </ItemGroup>
+
 </Project>
