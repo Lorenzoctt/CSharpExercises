@@ -10,7 +10,7 @@
   <Class Name="ECommerce.Article">
     <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIQAAAAACQAgAAAEAAAAAAAAgABAAEAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AIQAAAAACQAgAAAAAAAAAAAAgABAAEAAAAAAAAAAAAI=</HashCode>
       <FileName>Classes\Article.cs</FileName>
     </TypeIdentifier>
   </Class>
