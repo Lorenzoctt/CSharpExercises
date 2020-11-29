@@ -84,7 +84,7 @@ namespace CSharpExercises
                     };
 
                     foreach (Article c in myArticlelist)
-                        System.Console.WriteLine(c.List());
+                        System.Console.WriteLine(c.List());//scorro e stampo a video il contenuto della lista
                 }
 
             }
