@@ -1,6 +1,7 @@
 ﻿using System;
-//using ECommerce;  // x accedere alla classe
-using CSharpExercises; // accedere al namespace e classi
+using System.Collections.Generic;
+using ECommerce;  // x accedere alla classe
+//using CSharpExercises; // accedere al namespace e classi
 
 
 
@@ -43,27 +44,56 @@ namespace CSharpExercises
 
 
             {
-                Console.WriteLine("-----------------------------------------------------------------------");
+                Console.WriteLine("----------- avvio costruttore --------------------------------------------");
 
                 // var firstCustomer = new Customer();  // in alternativa
                 Customer firstCustomer = new Customer("Francesco", "Rossi"); // in alternativa
-                
+
                 //Richiamo il  costruttore per assegnare nome, cognome ed email all'oggetto.
                 Customer myCustomer = new Customer("Francesco", "Rossi", "francesco.rossi@alice.it");
-               
+
                 Console.WriteLine(myCustomer.GetInfo());  //stampo as video alcuni valori dell'oggetto'
-          
+
+
+
             }
 
             Console.WriteLine($"Il numero dei clienti in anagrafico è {Customer.PrintSomething()}"); Customer.PrintSomething();  //utilizzo una funzione dichiaratacon  metodo statico e non ho necessità di creare l'istanza
 
+            {
+                // avvio il costruttore
 
+                Article myArticle = new Article("Face mask", (decimal)12.44);
+                Console.WriteLine(myArticle.List());
+
+                Console.WriteLine("Avvio distruzione oggetto");
+                myArticle.Destroy();
+
+                Console.WriteLine(myArticle.List());
+                myArticle.Update(1, (decimal)12.5, "Face mask", 15, 22);
+
+                Console.WriteLine(myArticle.Retrive(1));
+
+
+                {  // utilizzo di una lista di articoli
+                    List<Article> myArticlelist = new List<Article>()
+                    {
+                        new Article( "Face mask",  (decimal)44.5 ),
+                        new Article( "trapano",  (decimal)57.5 )
+
+                    };
+
+                    foreach (Article c in myArticlelist)
+                        System.Console.WriteLine(c.List());
+                }
+
+            }
 
         }
 
 
 
-        
+
 
 
 

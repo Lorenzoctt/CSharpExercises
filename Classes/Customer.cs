@@ -3,7 +3,7 @@
 //using System.Linq;
 //using System.Text;
 
-namespace CSharpExercises
+namespace ECommerce
 {
     public class Customer
     {
@@ -20,6 +20,8 @@ namespace CSharpExercises
         private string Password; // meglio mettere una proprità asc nascosta
 
 
+
+
         // COSTRUTTORE
         public Customer(string firstname, string LastName)
         {
@@ -28,13 +30,17 @@ namespace CSharpExercises
         }
 
 
-        //Aggiungi alla classe Customer un costruttore per assegnare nome, cognome ed email ai campi della classe
+        // costruttore per assegnare nome, cognome ed email agli attributi campi della classe
         public Customer(string firstName, string lastName, string email)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
         }
+
+
+
+
 
 
 

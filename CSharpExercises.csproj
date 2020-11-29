@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <None Update="Classes\ClassDiagram.cd">
-      <CustomToolNamespace></CustomToolNamespace>
+      <CustomToolNamespace>ECommerce</CustomToolNamespace>
     </None>
   </ItemGroup>
 
