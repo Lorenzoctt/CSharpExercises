@@ -40,6 +40,7 @@ namespace CSharpExercises
                     Console.WriteLine($"Il parametro passato è {args[0]}");
                 }
                 else Console.WriteLine("Nessun parametro passato !");
+            
             }
 
 
@@ -77,10 +78,12 @@ namespace CSharpExercises
                 myArticle.Destroy(1);
 
                 Console.WriteLine(myArticle.Retrive(1));
+                myArticle.Stock = 200;
+                Console.WriteLine(myArticle.Retrive(1));
 
 
                 {  // utilizzo di una lista di articoli
-                    List<Article> myArticlelist = new List<Article>()
+                    List<Article> myArticlelist = new List<Article>() 
                     {
                         new Article( "Face mask",  (decimal)44.5 ),
                         new Article( "trapano",  (decimal)57.5 )
@@ -90,6 +93,10 @@ namespace CSharpExercises
                     foreach (Article c in myArticlelist)
                         System.Console.WriteLine(c.List());//scorro e stampo a video il contenuto della lista
                 }
+
+
+
+
 
             }
 

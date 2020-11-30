@@ -5,14 +5,39 @@
 
 namespace ECommerce
 {
+
+
     public class Article
     {
         // aggiunta campi privati
         private int? Id_article;
         private Decimal? Price;
         private string Description;
-        private int? Stock;
         private Decimal? Tax;
+
+
+        // la proprietà serve per controllare maggiormente i vallri passati
+        //public int? Stock
+        //{
+        //    get;
+        //    set;
+        //}
+        private int? stock;
+        public int? Stock
+        {
+            get
+            {
+                return stock;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    stock = value;
+                }
+            }
+        }
+
 
 
         public Article(string _description, Decimal _price)
@@ -20,6 +45,12 @@ namespace ECommerce
             this.Description = _description;
             this.Price = _price;
         }
+        public Article()
+        {
+
+        }
+
+ 
 
         public string List()
         {
