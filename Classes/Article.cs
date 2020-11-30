@@ -30,7 +30,7 @@ namespace ECommerce
 
         public void Destroy(int _id)
         {
-            if (this.Id_article == _id)  // veriifco che sto distruggendo l'oggetto giusto
+            if (this.Id_article == _id)  // verifico che sto distruggendo l'oggetto giusto
             {
                 this.Id_article = null;
                 this.Price = null;
@@ -65,7 +65,11 @@ namespace ECommerce
 
         public String Retrive(int _id)
         {
-            return this.Id_article + "\t" + this.Price + "\t" + this.Description + "\t" + this.Stock + "\t" + this.Tax;
+            if (this.Id_article == _id)  // verifico che sto distruggendo l'oggetto giusto
+            {
+                return this.Id_article + "\t" + this.Price + "\t" + this.Description + "\t" + this.Stock + "\t" + this.Tax;
+            }
+            else return null;
         }
     }
 
