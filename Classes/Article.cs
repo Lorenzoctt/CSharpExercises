@@ -28,14 +28,17 @@ namespace ECommerce
 
 
 
-        public void Destroy()
+        public void Destroy(int _id)
         {
-            this.Id_article = null;
-            this.Price = null;
-            this.Description = null;
-            this.Stock = null;
-            this.Tax = null;
-
+            if (this.Id_article == _id)  // veriifco che sto distruggendo l'oggetto giusto
+            {
+                this.Id_article = null;
+                this.Price = null;
+                this.Description = null;
+                this.Stock = null;
+                this.Tax = null;
+            }
+            else Console.WriteLine("Id articolo errato");
         }
 
         public void Create(int _id_article, Decimal _price, string _description, int _stock, Decimal _tax)
@@ -65,4 +68,6 @@ namespace ECommerce
             return this.Id_article + "\t" + this.Price + "\t" + this.Description + "\t" + this.Stock + "\t" + this.Tax;
         }
     }
-    }
+
+
+}

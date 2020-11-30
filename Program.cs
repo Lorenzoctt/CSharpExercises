@@ -66,11 +66,13 @@ namespace CSharpExercises
                 Article myArticle = new Article("Face mask", (decimal)12.44);
                 Console.WriteLine(myArticle.List());
 
-                Console.WriteLine("Avvio distruzione oggetto");
-                myArticle.Destroy();
+               
 
                 Console.WriteLine(myArticle.List());
                 myArticle.Update(1, (decimal)12.5, "Face mask", 15, 22);
+
+                Console.WriteLine("Avvio distruzione oggetto");
+                myArticle.Destroy(1);
 
                 Console.WriteLine(myArticle.Retrive(1));
 
