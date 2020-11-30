@@ -71,6 +71,8 @@ namespace CSharpExercises
                 Console.WriteLine(myArticle.List());
                 myArticle.Update(1, (decimal)12.5, "Face mask", 15, 22);
 
+                Console.WriteLine(myArticle.Retrive(1));
+
                 Console.WriteLine("Avvio distruzione oggetto");
                 myArticle.Destroy(1);
 
