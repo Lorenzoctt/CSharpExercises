@@ -3,7 +3,7 @@
   <Class Name="ECommerce.Basket">
     <Position X="7" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAABAAAAAAAgAAAAAAAAAAEAAIAAAgACAAAI=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAgAAAAAAAAAAEAAIAAAgACAAEI=</HashCode>
       <FileName>Classes\Basket.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CSharpExercises.WorkItem">
-    <Position X="5.5" Y="0.5" Width="1.5" />
+    <Position X="5.5" Y="0.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WorkItem.cs</FileName>
