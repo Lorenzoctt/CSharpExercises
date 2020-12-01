@@ -9,7 +9,7 @@ namespace ECommerce
     {
 
         
-        private int Id_asket
+        private int Id_basket
         {
             get => default;
             set

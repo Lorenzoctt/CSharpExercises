@@ -10,7 +10,7 @@
   <Class Name="ECommerce.Article">
     <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIQAAAAACQAgAAAAAAAAAAAAgABAAEAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AIQAAAAACQAgAAAAAAAAAAAAgABAAMAAAAAAAAAAAAI=</HashCode>
       <FileName>Classes\Article.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -19,6 +19,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAEAAACQAgAgIAAAAAAIAAAAAAEACAAAQACAAACg=</HashCode>
       <FileName>Classes\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpExercises.WorkItem">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorkItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
