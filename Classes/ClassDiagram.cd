@@ -22,11 +22,11 @@
       <FileName>Classes\Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="CSharpExercises.IBasket">
-    <Position X="5.5" Y="0.5" Width="1.5" />
+  <Interface Name="ECommerce.IBasket" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IBasket.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Classes\Ibasket.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
