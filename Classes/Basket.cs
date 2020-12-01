@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ECommerce
 {
-    public class Basket
+    public class Basket: IBasket
     {
 
         
@@ -41,8 +41,12 @@ namespace ECommerce
             }
         }
 
-     
-  
+        public Basket()//costruttore
+        {
+
+        }
+
+
 
         public void SetEmpy()
         {
@@ -51,12 +55,14 @@ namespace ECommerce
 
         public void Buy()
         {
-            throw new System.NotImplementedException();
+           // throw new System.NotImplementedException();
+            Console.WriteLine("Ordine completato");
         }
 
         public void List()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("elenco l'ordine");
+            //throw new System.NotImplementedException();
         }
 
         public void Create()

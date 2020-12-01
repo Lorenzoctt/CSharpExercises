@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ECommerce.Basket">
-    <Position X="7" Y="1.25" Width="1.5" />
+    <Position X="5.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAgAAAAAAAAAAEAAIAAAgACAAEI=</HashCode>
       <FileName>Classes\Basket.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ECommerce.Article">
     <Position X="3.5" Y="0.5" Width="1.5" />
@@ -21,12 +22,12 @@
       <FileName>Classes\Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CSharpExercises.WorkItem">
-    <Position X="5.5" Y="0.5" Width="3" />
+  <Interface Name="CSharpExercises.IBasket">
+    <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>WorkItem.cs</FileName>
+      <FileName>IBasket.cs</FileName>
     </TypeIdentifier>
-  </Class>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
