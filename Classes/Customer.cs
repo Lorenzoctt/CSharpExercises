@@ -1,4 +1,5 @@
 ﻿using System;
+
 //using System.Collections.Generic;
 //using System.Linq;
 //using System.Text;
@@ -40,7 +41,7 @@ namespace ECommerce
             this.id_user = 1;   // TODO  da implementare autogenerazione
         }
 
-
+    
         public int Age   //Interaction between classes(#3)
         {
             get { return age; }

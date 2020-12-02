@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ECommerce.Basket">
-    <Position X="5.5" Y="1.75" Width="1.5" />
+    <Position X="4" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAgAAAAAAAAAAEAAIAAAgACAAEI=</HashCode>
       <FileName>Classes\Basket.cs</FileName>
@@ -9,7 +9,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ECommerce.Article">
-    <Position X="3.5" Y="0.5" Width="1.5" />
+    <Position X="4" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIQAAAAACQAgAAAAAAAAAAAAgABAAMAAAAAAAAAAAAI=</HashCode>
       <FileName>Classes\Article.cs</FileName>
@@ -23,14 +23,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ECommerce.Customers">
-    <Position X="7.75" Y="1.25" Width="1.5" />
+    <Position X="0.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>Customers.cs</FileName>
+      <HashCode>AAIAAAAAQAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Classes\Customers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ECommerce.OrderHeader">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAQAAAAAAAAAAAAAAAAAAAAFAAIABAAAAAAAI=</HashCode>
+      <FileName>Classes\OrderHeader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ECommerce.OrderDetail">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAhAAAAAAAAAAAAAAAAAAAAAAAAAIAAIABAAAAAAAA=</HashCode>
+      <FileName>Classes\OrderDetail.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="ECommerce.IBasket" Collapsed="true">
-    <Position X="6" Y="0.5" Width="1.5" />
+    <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Classes\Ibasket.cs</FileName>

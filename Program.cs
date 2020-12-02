@@ -13,9 +13,12 @@ namespace CSharpExercises
     {
         static void Main(string[] args)
         {
-            CreateOrder(); //Interaction between classes (#3)
 
-            {
+            //funcList();
+            CreateOrder(); //OK   Interaction between classes (#3)
+
+            if (false)
+            { // non eseguo
                 // Scrivi un programma completo di namespace, che legge il tuo nome dagli argomenti di Main() e lo 
                 // ristampa trasformandolo in uppercase.Carica le modifiche sul repo Github.
                 if (args.Length > 0)
@@ -151,7 +154,15 @@ namespace CSharpExercises
 
 
 
+        static void funcList()  // utilizzo di una lista 
+        {
 
+            var namesList = new List<string> { "Aldo", "filippo", "giovanni" };
+            foreach (var name in namesList)
+            {
+                Console.WriteLine($"Hello {name.ToLower()}");
+            }
+        }
 
 
 
