@@ -18,7 +18,7 @@ namespace ECommerce
         private string City;
         private string Email; //  meglio mettere una classe email per ottenere la validazione
         private string Password; // meglio mettere una proprità asc nascosta
-
+        private int age;
 
 
 
@@ -36,6 +36,18 @@ namespace ECommerce
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
+        }
+
+
+        public int Age   //Interaction between classes(#3)
+        {
+            get { return age; }
+            set
+            {
+                if (value >= 18)  age = value; 
+                else
+                 Console.WriteLine("You might not be able to buy certain articles"); 
+            }
         }
 
 

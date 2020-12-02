@@ -18,8 +18,15 @@
   <Class Name="ECommerce.Customer">
     <Position X="0.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAACQAgAgIAAAAAAIAAAAAAEACAAAQACAAACg=</HashCode>
+      <HashCode>AAAAAEAAACQAwAgIAEAAAAIAAAAAAEACAAAQACAAACg=</HashCode>
       <FileName>Classes\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSharpExercises.OrderHeader">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAQAAAAAAAAAAAAAAAAAAAAFAAAABAACAAAAI=</HashCode>
+      <FileName>OrderHeader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="ECommerce.IBasket" Collapsed="true">

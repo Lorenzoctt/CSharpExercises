@@ -37,7 +37,10 @@ class Program
                 Customer myCustomer = new Customer("Francesco", "Rossi", "francesco.rossi@alice.it");
 
                 Console.WriteLine(myCustomer.GetInfo());  //stampo as video alcuni valori dell'oggetto'
-
+                                                          //-------
+                
+                //-------------  Interaction between classes (#3)
+                myCustomer.Age = 15;  // restituisce in cosnole il messaggio di errore
 
 
             }
@@ -82,7 +85,7 @@ class Program
                 ItmpBasket.Buy();
                 Basket tmpBasket = new Basket();
                 tmpBasket.Buy();
-             
+               
 
 
 
