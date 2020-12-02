@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ECommerce
 {
-    public class OrderHeader
+    public class OrderHeader 
     {
         private int Id_order;
         private DateTime Data;
@@ -18,9 +18,9 @@ namespace ECommerce
 
             this.Id_User = id_user;
         }
-        public void Create()
+        public void Create(Customer _customer)
         {
-            //if (Customer.age <18) { Console.WriteLine("You might not be able to buy certain articles"); }
+         
 
 
             this.Id_order = 1001;// da implememtare in automatico

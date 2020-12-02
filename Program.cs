@@ -8,8 +8,8 @@ using ECommerce;  // x accedere alla classe
 namespace CSharpExercises
 {
 
-    
-class Program
+
+    class Program
     {
         static void Main(string[] args)
         {
@@ -31,55 +31,54 @@ class Program
 
         }
 
-            static void funcConsole()  // esempio di utilizzo Console.WriteLine ReadKey
-            {
-                {  // mio esempio
-                    string aFriend = "Bill";
-                    Console.WriteLine($"Hello {aFriend}");
-                    Console.Write("Premi un tasto per proseguire");
-                    Console.ReadKey();
+        static void funcConsole()  // esempio di utilizzo Console.WriteLine ReadKey
+        {
+            {  // mio esempio
+                string aFriend = "Bill";
+                Console.WriteLine($"Hello {aFriend}");
+                Console.Write("Premi un tasto per proseguire");
+                Console.ReadKey();
 
 
-                    string nowDate = DateTime.Today.Date.ToString(("dd/MM/yyyy")), nowHour = DateTime.Now.ToString("HH:mm:ss");
-                    Console.WriteLine($"Oggi è il  {nowDate} e sono le ore {nowHour}");
-                }
-                {
-
-                    //   Scrivi un programma completo di namespace, che legge il tuo nome dalla console e lo ristampa 
-                    //    trasformandolo in uppercase.Carica le modifiche sul repo Github.
-                    Console.WriteLine("Immetti il tuo nome");
-                    string retName = Console.ReadLine().ToUpper();
-                    Console.WriteLine($"Ciao {retName}");
-
-                }
+                string nowDate = DateTime.Today.Date.ToString(("dd/MM/yyyy")), nowHour = DateTime.Now.ToString("HH:mm:ss");
+                Console.WriteLine($"Oggi è il  {nowDate} e sono le ore {nowHour}");
             }
-
-            static void CreateOrder()
             {
-                //                Given two classes, Customer and Article:
-                //create a new object of type Customer, which now should have also the age, set through a property. If the age is less 
-                // than 18, the user should see a warning message in the console like "You might not be able to buy certain articles"
-                //Then, make Customer and Article interact together so that:
-                //	when a customer wants to make an order for an article, and the customer age is less than 18, the Article class should print a message
 
-                Customer myCustomer = new Customer("Filippo", "Rossi");
-                
-                myCustomer.Age = 17;
-
-                Article myArticle = new Article("Videocassetta", (decimal)12.4);
-
-                myArticle.Update(101, (decimal)12.4, "Videcassetta", 5, (decimal)22);
-
-                OrderHeader myOrderHeader = new OrderHeader(myCustomer.Id_user);
-
-                myOrderHeader.Create();
+                //   Scrivi un programma completo di namespace, che legge il tuo nome dalla console e lo ristampa 
+                //    trasformandolo in uppercase.Carica le modifiche sul repo Github.
+                Console.WriteLine("Immetti il tuo nome");
+                string retName = Console.ReadLine().ToUpper();
+                Console.WriteLine($"Ciao {retName}");
 
             }
+        }
+
+        static void CreateOrder()
+        {
+            //                Given two classes, Customer and Article:
+            //create a new object of type Customer, which now should have also the age, set through a property. If the age is less 
+            // than 18, the user should see a warning message in the console like "You might not be able to buy certain articles"
+            //Then, make Customer and Article interact together so that:
+            //	when a customer wants to make an order for an article, and the customer age is less than 18, the Article class should print a message
+
+            Customer myCustomer = new Customer("Filippo", "Rossi");
+            myCustomer.Age = 17;
+
+            Article myArticle = new Article("Videocassetta", (decimal)12.4);
+            myArticle.Update(101, (decimal)12.4, "Videocassetta", 5, (decimal)22);
+
+            //  OrderHeader myOrderHeader = new OrderHeader(myCustomer.Id_user);
+            myCustomer.AddToCart(myArticle);
+
+
+
+        }
 
 
         static void altriEsempi()
         {
-           
+
 
 
             {
@@ -151,9 +150,9 @@ class Program
 
 
 
-       
 
-}
+
+    }
 
 
 }

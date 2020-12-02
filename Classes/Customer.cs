@@ -89,11 +89,13 @@ namespace ECommerce
         }
 
 
-        public bool AddToCart()
+        public void AddToCart(Article _article)
+
         {
-            Console.WriteLine("Product added");
+            if (this.age < 18) { Console.WriteLine("You might not be able to buy certain articles"); }
+
             // da implementare
-            return true;
+            //  return true;
         }
 
         public static int PrintSomething()  // funzione statica , è possibile accederci anche senza istanziare l'oggetto
