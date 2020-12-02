@@ -10,7 +10,7 @@ namespace ECommerce
 
         // >>>> FIELDS OR ATTRIBUTES
 
-        private int Id_user;
+        private int id_user;
         private string FirstName;
         private String LastName;
         private int Address;
@@ -18,7 +18,7 @@ namespace ECommerce
         private string City;
         private string Email; //  meglio mettere una classe email per ottenere la validazione
         private string Password; // meglio mettere una proprità asc nascosta
-        private int age;
+        protected int age;
 
 
 
@@ -27,6 +27,7 @@ namespace ECommerce
         {
             this.FirstName = firstname;
             this.LastName = LastName;
+            this.id_user = 1;   // TODO  da implementare autogenerazione
         }
 
 
@@ -36,6 +37,7 @@ namespace ECommerce
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
+            this.id_user = 1;   // TODO  da implementare autogenerazione
         }
 
 
@@ -44,10 +46,16 @@ namespace ECommerce
             get { return age; }
             set
             {
-                if (value >= 18)  age = value; 
-                else
-                 Console.WriteLine("You might not be able to buy certain articles"); 
+                if (value < 18)
+                { Console.WriteLine("You might not be able to buy certain articles"); }
+                age = value;
             }
+        }
+
+        public int Id_user
+        {
+            get { return id_user; }
+            
         }
 
 

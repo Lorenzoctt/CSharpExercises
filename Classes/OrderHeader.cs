@@ -8,13 +8,25 @@ namespace ECommerce
     public class OrderHeader
     {
         private int Id_order;
-        private int Data;
+        private DateTime Data;
         private int Id_internalOrder;
-        private int id_User;
+        private int Id_User;
 
+
+        public OrderHeader(int id_user)
+        {
+
+            this.Id_User = id_user;
+        }
         public void Create()
         {
-            throw new System.NotImplementedException();
+            //if (Customer.age <18) { Console.WriteLine("You might not be able to buy certain articles"); }
+
+
+            this.Id_order = 1001;// da implememtare in automatico
+            this.Data = DateTime.Now;
+            this.Id_internalOrder = 1;  // da implememtare in automatico
+
         }
 
         public void List()
