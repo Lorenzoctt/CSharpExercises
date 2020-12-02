@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ECommerce
 {
-    public class OrderHeader 
+    public class OrderHeader
     {
         private int Id_order;
         private DateTime Data;
@@ -20,7 +20,7 @@ namespace ECommerce
         }
         public void Create(Customer _customer)
         {
-         
+
 
 
             this.Id_order = 1001;// da implememtare in automatico

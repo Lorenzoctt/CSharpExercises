@@ -72,6 +72,10 @@ namespace CSharpExercises
             myCustomer.AddToCart(myArticle);
 
 
+            Customers myCustomers = new Customers();
+            myCustomers.Add(myCustomer);
+            Console.WriteLine("numero clienti in lista: " + myCustomers.Count());
+
 
         }
 

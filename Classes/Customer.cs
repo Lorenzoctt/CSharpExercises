@@ -55,7 +55,7 @@ namespace ECommerce
         public int Id_user
         {
             get { return id_user; }
-            
+
         }
 
 
@@ -92,7 +92,12 @@ namespace ECommerce
         public void AddToCart(Article _article)
 
         {
-            if (this.age < 18) { Console.WriteLine("You might not be able to buy certain articles"); }
+            if (this.age < 18)
+            {
+                Console.WriteLine("You might not be able to buy certain articles");
+            }
+            else
+                Console.WriteLine("Articolo aggiunto: " + _article.List());
 
             // da implementare
             //  return true;
