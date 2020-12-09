@@ -15,7 +15,12 @@ namespace CSharpExercises
         {
 
             //funcList();
-            CreateOrder(); //OK   Interaction between classes (#3)
+            //   CreateOrder(); //OK   Interaction between classes (#3)
+            // TestCustomer();  //OK  test customer
+
+            TestaArticoli();  // testa classi articlese articles
+
+          //  funcConsole()  // esempio di utilizzo Console.WriteLine ReadKey
 
             if (false)
             { // non eseguo
@@ -68,22 +73,24 @@ namespace CSharpExercises
             Customer myCustomer = new Customer("Filippo", "Rossi");
             myCustomer.Age = 17;
 
-            Article myArticle = new Article("Videocassetta", (decimal)12.4);
-            myArticle.Update(101, (decimal)12.4, "Videocassetta", 5, (decimal)22);
+            Article myArticle = new Article(1,"Videocassetta", (decimal)12.4);
+            myArticle.Update(1, (decimal)12.4, "Videocassetta", 5, (decimal)22);
 
             //  OrderHeader myOrderHeader = new OrderHeader(myCustomer.Id_user);
             myCustomer.AddToCart(myArticle);
 
 
             Customers myCustomers = new Customers();
+
             myCustomers.Add(myCustomer);
             Console.WriteLine("numero clienti in lista: " + myCustomers.Count());
+            myCustomers.List();
 
 
         }
 
 
-        static void altriEsempi()
+        static void TestCustomer()  // esempi con customer
         {
 
 
@@ -109,37 +116,11 @@ namespace CSharpExercises
             Console.WriteLine($"Il numero dei clienti in anagrafico è {Customer.PrintSomething()}"); Customer.PrintSomething();  //utilizzo una funzione dichiaratacon  metodo statico e non ho necessità di creare l'istanza
 
             {
-                // avvio il costruttore
-
-                Article myArticle = new Article("Face mask", (decimal)12.44);
-                Console.WriteLine(myArticle.List());
 
 
 
-                Console.WriteLine(myArticle.List());
-                myArticle.Update(1, (decimal)12.5, "Face mask", 15, 22);
-
-                Console.WriteLine(myArticle.Retrive(1));
-
-                Console.WriteLine("Avvio distruzione oggetto");
-                myArticle.Destroy(1);
-
-                Console.WriteLine(myArticle.Retrive(1));
-                myArticle.Stock = 200;
-                Console.WriteLine(myArticle.Retrive(1));
 
 
-                {  // utilizzo di una lista di articoli
-                    List<Article> myArticlelist = new List<Article>()
-                    {
-                        new Article( "Face mask",  (decimal)44.5 ),
-                        new Article( "trapano",  (decimal)57.5 )
-
-                    };
-
-                    foreach (Article c in myArticlelist)
-                        System.Console.WriteLine(c.List());//scorro e stampo a video il contenuto della lista
-                }
 
                 //----------------------------
                 IBasket ItmpBasket = new Basket();  // utilizzo interfaccia
@@ -148,6 +129,7 @@ namespace CSharpExercises
                 tmpBasket.Buy();
 
             }
+           
 
         }
 
@@ -164,9 +146,63 @@ namespace CSharpExercises
             }
         }
 
+        static void TestaArticoli()
+        {
+            // avvio il costruttore
+
+            Article myArticle1 = new Article(1, "Face mask", (decimal)12.44);
+            Console.WriteLine(myArticle1.List());
 
 
 
+            Console.WriteLine(myArticle1.List());
+            myArticle1.Update(1, (decimal)12.5, "Face mask", 15, 22);
+
+            Console.WriteLine(myArticle1.List());
+
+            Console.WriteLine("Avvio distruzione oggetto");
+            myArticle1.Destroy(1);
+
+            Console.WriteLine(myArticle1.List());
+            myArticle1.Stock = 200;
+            Console.WriteLine(myArticle1.List());
+
+
+            //{  // utilizzo di una lista di articoli esterna
+            //    List<Article> myArticlelist = new List<Article>()
+            //    {
+            //        new Article(1, "Face mask",  (decimal)44.5 ),
+            //        new Article( 2,"trapano",  (decimal)57.5 )
+
+            //    };
+
+            //    foreach (Article c in myArticlelist)
+            //        System.Console.WriteLine(c.List());//scorro e stampo a video il contenuto della lista
+            //}
+
+            Articles myArticles = new Articles();
+            myArticles.Add(myArticle1);
+            Console.WriteLine(myArticles.Count());
+            //----
+            Article myArticle2 = new Article(2, "cacciavite", (decimal)12.44);
+
+            myArticles.Add(myArticle2);
+            //----
+            Article myArticle3 = new Article(3, "quaderno", (decimal)12.44);
+            myArticles.Add(myArticle3);
+
+            //----
+            Article myArticle4 = new Article(4, "penna", (decimal)12.44);
+            myArticles.Add(myArticle4);
+            //----
+            myArticles.Delete(myArticle2);
+            Console.WriteLine(myArticles.Count());
+            myArticles.Delete(myArticle3);
+
+            myArticles.List();
+
+
+        }
     }
 
 

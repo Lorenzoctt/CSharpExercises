@@ -8,20 +8,16 @@ namespace ECommerce
 
 
     public class Article
+
     {
         // aggiunta campi privati
-        private int? Id_article;
+        private int id_article;
         private Decimal? Price;
         private string Description;
         private Decimal? Tax;
 
 
-        // la proprietà serve per controllare maggiormente i vallri passati
-        //public int? Stock
-        //{
-        //    get;
-        //    set;
-        //}
+
         private int? stock;
         public int? Stock
         {
@@ -38,10 +34,30 @@ namespace ECommerce
             }
         }
 
-
-
-        public Article(string _description, Decimal _price)
+        public int Property
         {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public int Id_article
+        {
+            get
+            {
+                return id_article;
+            }
+            set
+            {
+                id_article = Id_article;
+            }
+
+        }
+
+        public Article(int _id_article, string _description, Decimal _price)
+        {
+            this.id_article = _id_article;
             this.Description = _description;
             this.Price = _price;
         }
@@ -50,7 +66,7 @@ namespace ECommerce
 
         }
 
- 
+
 
         public string List()
         {
@@ -63,7 +79,7 @@ namespace ECommerce
         {
             if (this.Id_article == _id)  // verifico che sto distruggendo l'oggetto giusto
             {
-                this.Id_article = null;
+                // this.id_article = null;
                 this.Price = null;
                 this.Description = null;
                 this.Stock = null;
@@ -74,7 +90,7 @@ namespace ECommerce
 
         public void Create(int _id_article, Decimal _price, string _description, int _stock, Decimal _tax)
         {
-            this.Id_article = _id_article;
+            this.id_article = _id_article;
             this.Price = _price;
             this.Description = _description;
             this.Stock = _stock;
@@ -85,23 +101,14 @@ namespace ECommerce
 
         public void Update(int _id_article, Decimal _price, string _description, int _stock, Decimal _tax)
         {
-            this.Id_article = _id_article;
+            this.id_article = _id_article;
             this.Price = _price;
             this.Description = _description;
             this.Stock = _stock;
             this.Tax = _tax;
-
-
         }
 
-        public String Retrive(int _id)
-        {
-            if (this.Id_article == _id)  // verifico che sto distruggendo l'oggetto giusto
-            {
-                return this.Id_article + "\t" + this.Price + "\t" + this.Description + "\t" + this.Stock + "\t" + this.Tax;
-            }
-            else return null;
-        }
+
     }
 
 

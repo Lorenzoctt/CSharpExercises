@@ -9,25 +9,37 @@ namespace ECommerce
     {
 
 
-       private List<Customer> myCustomers = new List<Customer>();
+        private List<Customer> myCustomers;//= new List<Customer>(); // è possibile istanziare la lista nel costruttore
 
-        public void List()
+        public Customers()  // è possibile istanziare la lista nel costruttore
         {
-            throw new System.NotImplementedException();
+            this.myCustomers = new List<Customer>(); 
         }
        
         public void Add(Customer _customer)
         {
             myCustomers.Add(_customer);
         }
-
-        public void Cancel()
-        {
-            throw new System.NotImplementedException();
-        }
         public int Count()
         {
             return myCustomers.Count();
         }
+
+
+
+
+
+
+
+
+        public void List()
+        {
+            throw new System.NotImplementedException();
+        }
+        public void Cancel()
+        {
+            throw new System.NotImplementedException();
+        }
+
     }
 }
