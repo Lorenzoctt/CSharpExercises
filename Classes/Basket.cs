@@ -68,7 +68,7 @@ namespace ECommerce
         /// <summary>
         /// passando l'articolo e l'utente aggiunge l'articolo
         /// </summary>
-        public void add()
+        public void Add()
         {
             throw new System.NotImplementedException();
         }

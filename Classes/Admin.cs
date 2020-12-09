@@ -5,14 +5,13 @@ using System.Text;
 
 namespace ECommerce
 {
-    public class Admin
+    public class Admin: Customer
     {
-        public int Id
+        private bool administrator;
+
+        public void SetAdministrator(bool come)
         {
-            get => default;
-            set
-            {
-            }
+            administrator = come;
         }
     }
 }

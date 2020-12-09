@@ -5,64 +5,67 @@ using System.Text;
 
 namespace ECommerce
 {
-    public class Articles
+    public  class Articles  
     {
 
 
-        private List<Article> myArticlesList;//= new List<Customer>(); // è possibile istanziare la lista nel costruttore
+        private static  List<Article> myArticlesList= new List<Article>(); // è possibile istanziare la lista nel costruttore
 
-        public Articles() // COSTRUTTORE // è possibile istanziare la lista nel costruttore
-        {
-            this.myArticlesList = new List<Article>();
-        }
+
 
         /// <summary>
         /// x aggiungere articoli (anche con metodo statico ?)
         /// </summary>
-        public void Add(Article _article)
+        public static void Add(Article _article)  // metodi e proprietà statica che non necessita di istanziarla ma sempre visibile in ogni parte del programma
         {
             myArticlesList.Add(_article);
         }
-        public int Count()
+        public static int Count()
         {
             return myArticlesList.Count();
         }
 
 
 
-        public void Delete(Article _article)  //OK funziona 
+        public static void Delete(Article _article)  //OK funziona 
         {
             myArticlesList.Remove(_article);
         }
-        public void Delete(int myIdArticle)  //OK funziona 
+        public static void Delete(int myIdArticle)  //OK funziona 
         {
             foreach (Article myArticle in myArticlesList)
             {
-                
 
-                if (myArticle.Id_article == myIdArticle) {
-                    Console.WriteLine(myArticle.List()); }
+
+                if (myArticle.Id_article == myIdArticle)
+                {
+                    Console.WriteLine("CANCELLAZIONE : " +myArticle.List());
+                    myArticlesList.Remove(myArticle);
+                    return;  //esco dal ciclo perchè la lista è cambiata e ilprossimo giro darebbe errore
+
+
+                }
             }
         }
-        public void Update()
+        public static void Update()
         {
             throw new System.NotImplementedException();
         }
 
-        public void List()
+        public static void List()
         {
 
             // throw new System.NotImplementedException();
             foreach (Article myArticle in myArticlesList)
             {
-                Console.WriteLine( myArticle.List());
+                Console.WriteLine(myArticle.List());
             }
         }
 
         /// <summary>
         /// lista di articoli
         /// </summary>
-        public void Retrive()  // ritorna un elemento dalla lista
+        public static void Retrive()  // ritorna un elemento dalla lista
         {
             throw new System.NotImplementedException();
         }
@@ -70,9 +73,17 @@ namespace ECommerce
         /// <summary>
         /// cerca per descrizione e ritorna un solo articolo
         /// </summary>
-        public void searchedArticle()
+        public static Article Search(string myDescription )
         {
-            throw new System.NotImplementedException();
+            foreach (Article tmpArticle in myArticlesList)
+            {
+                if (tmpArticle.Description == myDescription)
+                {
+                    return tmpArticle;
+                }
+              
+            }
+               return null;
         }
     }
 }

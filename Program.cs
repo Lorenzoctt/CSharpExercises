@@ -14,16 +14,43 @@ namespace CSharpExercises
         static void Main(string[] args)
         {
 
-            //funcList();
-            //   CreateOrder(); //OK   Interaction between classes (#3)
-            // TestCustomer();  //OK  test customer
+            Console.WriteLine("Premere un numero da 1 a 6 ");
+            ConsoleKeyInfo level = Console.ReadKey();
 
-            TestaArticoli();  // testa classi articlese articles
+            
+            switch (level.KeyChar)
+            {
+                case '1':
+                    Console.WriteLine("funcList(;");
+                    funcList();
+                    break;
+                case '2':
+                    Console.WriteLine(" CreateOrder()");
+                    CreateOrder();//OK   Interaction between classes (#3)
+                    TestCustomer();  //OK  test customer e admin
+                    break;
+                case '3':
+                    Console.WriteLine("testa classi article e articles (statico)");
+                    TestaArticoli();  // testa classi article e articles (statico)
+                    TestaArticoliBis();
+                    break;
+                case '4':
+                    Console.WriteLine(" esempio di utilizzo Console.WriteLine ReadKey");
+                    funcConsole();  // esempio di utilizzo Console.WriteLine ReadKey
+                    break;
+                case '5':
+                    Console.WriteLine("prova Interface");
+                    TestInferface();  //prova Interface
+                    break;
+            }
 
-          //  funcConsole()  // esempio di utilizzo Console.WriteLine ReadKey
+ 
 
-            if (false)
-            { // non eseguo
+          
+  
+
+            if (false)  // non eseguo
+            {
                 // Scrivi un programma completo di namespace, che legge il tuo nome dagli argomenti di Main() e lo 
                 // ristampa trasformandolo in uppercase.Carica le modifiche sul repo Github.
                 if (args.Length > 0)
@@ -73,7 +100,7 @@ namespace CSharpExercises
             Customer myCustomer = new Customer("Filippo", "Rossi");
             myCustomer.Age = 17;
 
-            Article myArticle = new Article(1,"Videocassetta", (decimal)12.4);
+            Article myArticle = new Article(1, "Videocassetta", (decimal)12.4);
             myArticle.Update(1, (decimal)12.4, "Videocassetta", 5, (decimal)22);
 
             //  OrderHeader myOrderHeader = new OrderHeader(myCustomer.Id_user);
@@ -84,13 +111,13 @@ namespace CSharpExercises
 
             myCustomers.Add(myCustomer);
             Console.WriteLine("numero clienti in lista: " + myCustomers.Count());
-            myCustomers.List();
+           // myCustomers.List(); TODO
 
 
         }
 
 
-        static void TestCustomer()  // esempi con customer
+        static void TestCustomer()  // esempi con customer e admin
         {
 
 
@@ -101,7 +128,7 @@ namespace CSharpExercises
                 // var firstCustomer = new Customer();  // in alternativa
                 Customer firstCustomer = new Customer("Francesco", "Rossi"); // in alternativa
 
-                //Richiamo il  costruttore per assegnare nome, cognome ed email all'oggetto.
+
                 Customer myCustomer = new Customer("Francesco", "Rossi", "francesco.rossi@alice.it");
 
                 Console.WriteLine(myCustomer.GetInfo());  //stampo as video alcuni valori dell'oggetto'
@@ -115,25 +142,30 @@ namespace CSharpExercises
 
             Console.WriteLine($"Il numero dei clienti in anagrafico è {Customer.PrintSomething()}"); Customer.PrintSomething();  //utilizzo una funzione dichiaratacon  metodo statico e non ho necessità di creare l'istanza
 
-            {
+            // test classe admin
 
-
-
-
-
-
-                //----------------------------
-                IBasket ItmpBasket = new Basket();  // utilizzo interfaccia
-                ItmpBasket.Buy();
-                Basket tmpBasket = new Basket();
-                tmpBasket.Buy();
-
-            }
+            Admin myAdmin = new Admin();
            
+            myAdmin.SetAdministrator(true);
+            myAdmin.RegUser("lore","cccc","ore@aaa");
+
+            Console.WriteLine("myAdmin.Id_user: " +myAdmin.Id_user);
+
+
+
 
         }
 
 
+        static void TestInferface()
+        {
+            //----------------------------
+            IBasket ItmpBasket = new Basket();  // utilizzo interfaccia
+            ItmpBasket.Buy();
+
+            Basket tmpBasket = new Basket(); // utilizzo classe
+            tmpBasket.Buy();
+        }
 
 
         static void funcList()  // utilizzo di una lista 
@@ -180,26 +212,60 @@ namespace CSharpExercises
             //        System.Console.WriteLine(c.List());//scorro e stampo a video il contenuto della lista
             //}
 
-            Articles myArticles = new Articles();
-            myArticles.Add(myArticle1);
-            Console.WriteLine(myArticles.Count());
+            //Articles myArticles = new Articles();
+            //myArticles.Add(myArticle1);
+            //Console.WriteLine(myArticles.Count());
+            ////----
+            //Article myArticle2 = new Article(2, "cacciavite", (decimal)12.44);
+
+            //myArticles.Add(myArticle2);
+            ////----
+            //Article myArticle3 = new Article(3, "quaderno", (decimal)12.44);
+            //myArticles.Add(myArticle3);
+
+            ////----
+            //Article myArticle4 = new Article(4, "penna", (decimal)12.44);
+            //myArticles.Add(myArticle4);
+            ////----
+            ///
+            //-------------------------------------------
+
+            Articles.Add(myArticle1);
+            Console.WriteLine(Articles.Count());
             //----
             Article myArticle2 = new Article(2, "cacciavite", (decimal)12.44);
 
-            myArticles.Add(myArticle2);
+            Articles.Add(myArticle2);
             //----
             Article myArticle3 = new Article(3, "quaderno", (decimal)12.44);
-            myArticles.Add(myArticle3);
+            Articles.Add(myArticle3);
 
             //----
             Article myArticle4 = new Article(4, "penna", (decimal)12.44);
-            myArticles.Add(myArticle4);
+            Articles.Add(myArticle4);
             //----
-            myArticles.Delete(myArticle2);
-            Console.WriteLine(myArticles.Count());
-            myArticles.Delete(myArticle3);
+            //--------------------------------------
 
-            myArticles.List();
+            Articles.Delete(myArticle2);
+            Console.WriteLine(Articles.Count());
+            Articles.Delete(myArticle3);
+
+            Articles.List();
+
+            //--
+            Article myArticleSearched = Articles.Search("penna"); //Finishing the ecommerce structure (#6)
+            Console.WriteLine("l'id ricercato è " + myArticleSearched.Id_article);
+            Articles.Delete(4);  // CANCELLO PER ID
+
+
+        }
+
+        static void TestaArticoliBis()
+        {
+
+
+
+            Console.WriteLine(Articles.Count());
 
 
         }

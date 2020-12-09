@@ -13,7 +13,7 @@ namespace ECommerce
         // aggiunta campi privati
         private int id_article;
         private Decimal? Price;
-        private string Description;
+        private string description;
         private Decimal? Tax;
 
 
@@ -34,13 +34,7 @@ namespace ECommerce
             }
         }
 
-        public int Property
-        {
-            get => default;
-            set
-            {
-            }
-        }
+ 
 
         public int Id_article
         {
@@ -55,10 +49,16 @@ namespace ECommerce
 
         }
 
+        public string Description
+        {
+            get { return description; }   // lo metto di sola lettura
+            
+        }
+
         public Article(int _id_article, string _description, Decimal _price)
         {
             this.id_article = _id_article;
-            this.Description = _description;
+            this.description = _description;
             this.Price = _price;
         }
         public Article()
@@ -81,7 +81,7 @@ namespace ECommerce
             {
                 // this.id_article = null;
                 this.Price = null;
-                this.Description = null;
+                this.description = null;
                 this.Stock = null;
                 this.Tax = null;
             }
@@ -92,7 +92,7 @@ namespace ECommerce
         {
             this.id_article = _id_article;
             this.Price = _price;
-            this.Description = _description;
+            this.description = _description;
             this.Stock = _stock;
             this.Tax = _tax;
 
@@ -103,7 +103,7 @@ namespace ECommerce
         {
             this.id_article = _id_article;
             this.Price = _price;
-            this.Description = _description;
+            this.description = _description;
             this.Stock = _stock;
             this.Tax = _tax;
         }

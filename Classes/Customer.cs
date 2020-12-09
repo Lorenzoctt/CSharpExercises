@@ -11,7 +11,7 @@ namespace ECommerce
 
         // >>>> FIELDS OR ATTRIBUTES
 
-        private int id_user;
+        private static int id_user=0;
         private string FirstName;
         private String LastName;
         private int Address;
@@ -28,7 +28,7 @@ namespace ECommerce
         {
             this.FirstName = firstname;
             this.LastName = LastName;
-            this.id_user = 1;   // TODO  da implementare autogenerazione
+           // this.id_user = 1;   // TODO  da implementare autogenerazione
         }
 
 
@@ -38,10 +38,11 @@ namespace ECommerce
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
-            this.id_user = 1;   // TODO  da implementare autogenerazione
+          //  this.id_user = 1;   // TODO  da implementare autogenerazione
         }
+        public Customer() { }
 
-    
+
         public int Age   //Interaction between classes(#3)
         {
             get { return age; }
@@ -83,9 +84,12 @@ namespace ECommerce
             throw new System.NotImplementedException();
         }
 
-        public void RegUser()
+        public void RegUser(string firstName, string lastName, string email)
         {
-            throw new System.NotImplementedException();
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+            id_user = Customers.NewId();   // TODO  da implementare autogenerazione
 
         }
 
