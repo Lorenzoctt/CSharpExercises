@@ -9,6 +9,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using NProgramLINQ;
 
 namespace NExLinq
 {
@@ -17,7 +18,7 @@ namespace NExLinq
         public static string Filtering()             // LINQ
         {
 
-            string[] cities = new string[] { "Roma","Milano" };
+            string[] cities = new string[] { "Roma", "Milano" };
 
             var query =
                 from city in cities
@@ -32,10 +33,10 @@ namespace NExLinq
 
             //IEnumerable<int>
 
-                //IEnumerable < int >= query =
-                //form number in numbers
-                //where number == 45
-                //    select number;
+            //IEnumerable < int >= query =
+            //form number in numbers
+            //where number == 45
+            //    select number;
         }
 
 
@@ -54,7 +55,7 @@ namespace NExLinq
                 select cityTouppercase;
             ////  END 
             ///
-            return query; 
+            return query;
 
 
         }
@@ -95,13 +96,8 @@ namespace NExLinq
               let cityTouppercase = city.ToUpper()
 
               select cityTouppercase;
-            ////  END 
-            ///
+
             return query;  // ritorna la  query
-
-
-           
-
         }
 
         public static List<string> GetCityList(string myCity) // ritorna una lista
@@ -115,13 +111,21 @@ namespace NExLinq
               let cityTouppercase = city.ToUpper()
 
               select cityTouppercase;
-            ////  END 
-            ///
+
             return query.ToList();  // ritorna la  query con lista
+        }
 
+        // KO
+        public static IEnumerable<string> GetMonte(List<ClsVetta> ListTemp, string mypar)  // funzione che ritorna un IEnumerable
+        {
+           
+            IEnumerable<string> query =
+              from fieldtmp in ListTemp
+              where fieldtmp.Nome == mypar
 
+              select fieldtmp.Nome;
 
-
+            return query;  // ritorna la  query
         }
 
     }

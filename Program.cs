@@ -49,8 +49,7 @@ namespace CSharpExercises
                     Console.WriteLine("prova LINQ");
 
                     ProgramLINQ.TestLINQ();
-                    
-
+                    ProgramLINQ.WorkLinq2(); // Working with LINQ pt2(#8)
 
                     break;
                     
