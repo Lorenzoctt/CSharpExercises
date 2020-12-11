@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace NProgramLINQ
 {
-    class ProgramLINQ
+     class ProgramLINQ
     {
        public static void TestLINQ()
         {

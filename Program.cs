@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using ECommerce;  // x accedere alla classe
 //using CSharpExercises; // accedere al namespace e classi
 using NProgramLINQ;
-using NExLinq;
-using System.Linq;
+
 
 
 
@@ -50,7 +49,7 @@ namespace CSharpExercises
                     Console.WriteLine("prova LINQ");
 
                     ProgramLINQ.TestLINQ();
-
+                    
 
 
                     break;
