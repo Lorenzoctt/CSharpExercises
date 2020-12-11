@@ -48,8 +48,10 @@ namespace CSharpExercises
                 case '6':
                     
                     Console.WriteLine("prova LINQ");
-                    //  TestLINQ();
-                    TestLINQ_Internal();
+
+                    ProgramLINQ.TestLINQ();
+
+
 
                     break;
                     
@@ -284,28 +286,7 @@ namespace CSharpExercises
 
 
 
-        static void TestLINQ_Internal()
-        {
-
-            Console.WriteLine("LINQ");
-
-
-            // utilizzo IE
-            IEnumerable<string> myIE = Enumerable.Empty<string>();
-            myIE = ExLinq.GetCity("Arezzo");
-            Console.WriteLine(myIE.First());
-            //---------------------------------------
-
-
-
-            // Utilizzo la LIST
-            Console.WriteLine(ExLinq.GetCityList("Arezzo").Count);
-            Console.WriteLine(ExLinq.GetCityList("Arezzo")[0]);
-
-
-
-
-        }
+       
     }
 
 

@@ -7,7 +7,7 @@ namespace NProgramLINQ
 {
     class ProgramLINQ
     {
-        static void TestLINQ()
+       public static void TestLINQ()
         {
 
             Console.WriteLine("LINQ");
