@@ -1,9 +1,9 @@
 ﻿using System;
-using EXLinq;
+using NExLinq;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ECommerce
+namespace NProgramLINQ
 {
     class ProgramLINQ
     {

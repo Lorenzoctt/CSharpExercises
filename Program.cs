@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using ECommerce;  // x accedere alla classe
 //using CSharpExercises; // accedere al namespace e classi
-using EXLinq;
-
+using NProgramLINQ;
+using NExLinq;
+using System.Linq;
 
 
 
@@ -47,7 +48,8 @@ namespace CSharpExercises
                 case '6':
                     
                     Console.WriteLine("prova LINQ");
-                    TestLINQ();
+                    //  TestLINQ();
+                    TestLINQ_Internal();
 
                     break;
                     
@@ -275,6 +277,32 @@ namespace CSharpExercises
 
 
             Console.WriteLine(Articles.Count());
+
+
+        }
+
+
+
+
+        static void TestLINQ_Internal()
+        {
+
+            Console.WriteLine("LINQ");
+
+
+            // utilizzo IE
+            IEnumerable<string> myIE = Enumerable.Empty<string>();
+            myIE = ExLinq.GetCity("Arezzo");
+            Console.WriteLine(myIE.First());
+            //---------------------------------------
+
+
+
+            // Utilizzo la LIST
+            Console.WriteLine(ExLinq.GetCityList("Arezzo").Count);
+            Console.WriteLine(ExLinq.GetCityList("Arezzo")[0]);
+
+
 
 
         }
