@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using ECommerce;  // x accedere alla classe
 //using CSharpExercises; // accedere al namespace e classi
+using EXLinq;
+
 
 
 
@@ -42,6 +44,13 @@ namespace CSharpExercises
                     Console.WriteLine("prova Interface");
                     TestInferface();  //prova Interface
                     break;
+                case '6':
+                    
+                    Console.WriteLine("prova LINQ");
+                    TestLINQ();
+
+                    break;
+                    
             }
 
  
