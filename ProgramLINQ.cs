@@ -39,13 +39,13 @@ namespace NProgramLINQ
 
             const string stringaIniziale = "Monte Falco, 1658, Parco Foreste Casentinesi ; Monte Falterona, 1654, Parco Foreste Casentinesi; Monte Fumaiolo, 1407, Appennino Tosco Emiliano";
 
-            // CONVERSIONE stringa in List
+            // CONVERSIONE stringa in List 
 
-            List<string> ListVettet = stringaIniziale.Split(';').ToList();  //Monte Falco, 1658, Parco Foreste Casentinesi ;
+            List<string> ListVette = stringaIniziale.Split(';').ToList();  //Monte Falco, 1658, Parco Foreste Casentinesi ;
 
             // rimuovo gli spazi
             List<string> vettetList2 = new List<string>();
-            foreach (string item in ListVettet)
+            foreach (string item in ListVette)
             {
                 vettetList2.Add(item.Trim());  // creo un altra lista senza spazi iniziali e finali
             };
