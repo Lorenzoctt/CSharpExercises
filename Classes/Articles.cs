@@ -7,18 +7,23 @@ namespace ECommerce
 {
     public  class Articles  
     {
-
+        private static int id_article;
 
         private static  List<Article> myArticlesList= new List<Article>(); // è possibile istanziare la lista nel costruttore
 
 
 
         /// <summary>
-        /// x aggiungere articoli (anche con metodo statico ?)
+        /// OK x aggiungere articoli (anche con metodo statico ?)
         /// </summary>
         public static void Add(Article _article)  // metodi e proprietà statica che non necessita di istanziarla ma sempre visibile in ogni parte del programma
         {
             myArticlesList.Add(_article);
+        }
+        public static int NewId()
+        {
+            id_article = ++id_article;
+            return id_article;
         }
         public static int Count()
         {
@@ -52,6 +57,9 @@ namespace ECommerce
             throw new System.NotImplementedException();
         }
 
+        /// <summary>
+        /// OK printing to console is enough
+        /// </summary>
         public static void List()
         {
 
@@ -73,7 +81,7 @@ namespace ECommerce
         /// <summary>
         /// cerca per descrizione e ritorna un solo articolo
         /// </summary>
-        public static Article Search(string myDescription )
+        public static Article SearchArticle(string myDescription )
         {
             foreach (Article tmpArticle in myArticlesList)
             {

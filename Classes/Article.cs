@@ -12,7 +12,7 @@ namespace ECommerce
     {
         // aggiunta campi privati
         private int id_article;
-        private Decimal? Price;
+        public Decimal? Price;
         private string description;
         private Decimal? Tax;
 
@@ -55,9 +55,9 @@ namespace ECommerce
             
         }
 
-        public Article(int _id_article, string _description, Decimal _price)
+        public Article( string _description, Decimal _price)
         {
-            this.id_article = _id_article;
+            this.id_article = Articles.NewId();
             this.description = _description;
             this.Price = _price;
         }

@@ -8,6 +8,6 @@ namespace ECommerce
     public interface IBasket
     {
         public void Buy();
-        public void List();
+        public string List();
     }
 }

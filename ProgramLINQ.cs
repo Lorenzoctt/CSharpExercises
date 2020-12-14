@@ -52,7 +52,7 @@ namespace NProgramLINQ
             // >>>>>>> -------------------------------------------
 
 
-            // creo lista vetteList3 di oggetti classi 
+            // creo lista  di oggetti classi 
             List<ClsVetta> ListVetteTot = new List<ClsVetta>();
 
             foreach (string item in vettetList2)
