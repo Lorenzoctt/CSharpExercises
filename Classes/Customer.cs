@@ -14,11 +14,19 @@ namespace ECommerce
         private static int id_user=0;
         private string FirstName;
         private String LastName;
+#pragma warning disable CS0169 // Il campo 'Customer.Address' non viene mai usato
         private int Address;
+#pragma warning restore CS0169 // Il campo 'Customer.Address' non viene mai usato
+#pragma warning disable CS0169 // Il campo 'Customer.Cap' non viene mai usato
         private int Cap;
+#pragma warning restore CS0169 // Il campo 'Customer.Cap' non viene mai usato
+#pragma warning disable CS0169 // Il campo 'Customer.City' non viene mai usato
         private string City;
+#pragma warning restore CS0169 // Il campo 'Customer.City' non viene mai usato
         private string Email; //  meglio mettere una classe email per ottenere la validazione
+#pragma warning disable CS0169 // Il campo 'Customer.Password' non viene mai usato
         private string Password; // meglio mettere una proprità asc nascosta
+#pragma warning restore CS0169 // Il campo 'Customer.Password' non viene mai usato
         protected int age;
 
 

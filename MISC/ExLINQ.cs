@@ -13,7 +13,7 @@ using NProgramLINQ;
 
 namespace NExLinq
 {
-    class ExLinq
+    class LinqUtils
     {
         public static string Filtering()             // LINQ
         {

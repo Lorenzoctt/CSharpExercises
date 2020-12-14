@@ -7,9 +7,13 @@ namespace ECommerce
 {
     public class OrderHeader
     {
+#pragma warning disable CS0414 // Il campo 'OrderHeader.Id_order' è assegnato, ma il suo valore non viene mai usato
         private int Id_order;
+#pragma warning restore CS0414 // Il campo 'OrderHeader.Id_order' è assegnato, ma il suo valore non viene mai usato
         private DateTime Data;
+#pragma warning disable CS0414 // Il campo 'OrderHeader.Id_internalOrder' è assegnato, ma il suo valore non viene mai usato
         private int Id_internalOrder;
+#pragma warning restore CS0414 // Il campo 'OrderHeader.Id_internalOrder' è assegnato, ma il suo valore non viene mai usato
         private int Id_User;
 
 

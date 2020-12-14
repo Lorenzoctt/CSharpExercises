@@ -13,16 +13,16 @@ namespace NProgramLINQ
 
             Console.WriteLine("LINQ");
 
-            // utilizzo IE
+            // utilizzo IEnumerable
             IEnumerable<string> myIE = Enumerable.Empty<string>();
-            myIE = ExLinq.GetCity("Arezzo");
+            myIE = LinqUtils.GetCity("Arezzo");
             Console.WriteLine(myIE.First());
             //---------------------------------------
 
 
             // Utilizzo la LIST
-            Console.WriteLine(ExLinq.GetCityList("Arezzo").Count);
-            Console.WriteLine(ExLinq.GetCityList("Arezzo")[0]);
+            Console.WriteLine(LinqUtils.GetCityList("Arezzo").Count);
+            Console.WriteLine(LinqUtils.GetCityList("Arezzo")[0]);
 
         }
 
@@ -67,10 +67,10 @@ namespace NProgramLINQ
 
 
             // stampo il numero record
-            Console.WriteLine(ExLinq.GetMonte(ListVetteTot, "Monte Falco").Count());
+            Console.WriteLine(LinqUtils.GetMonte(ListVetteTot, "Monte Falco").Count());
 
             // stampo gli elementi trovati
-            foreach (var myValue in ExLinq.GetMonte(ListVetteTot, "Monte Falco"))
+            foreach (var myValue in LinqUtils.GetMonte(ListVetteTot, "Monte Falco"))
             {
                 Console.WriteLine(myValue); 
             }
