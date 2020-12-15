@@ -304,18 +304,22 @@ namespace CSharpExercises
             //-----------
 
 
-            Basket PutIntoBasket1 = new Basket();
-            PutIntoBasket1.Add(myArticle1, 20, myCustomer1);  //aggiungo un articolo nel carrello
-            Baskets.AddtoList(PutIntoBasket1);
+            Basket Basket1 = new Basket();
+            Basket1.Add(myArticle1, 20, myCustomer1);  //aggiungo un articolo nel carrello
+            Basket1.Add(myArticle2, 2, myCustomer1);  //aggiungo un articolo nel carrello
+            Baskets.AddtoList(Basket1);
 
-            Basket PutIntoBasket2 = new Basket();
-            PutIntoBasket2.Add(myArticle2, 50, myCustomer2);  //aggiungo un'altro articolo nel carrello
-            Baskets.AddtoList(PutIntoBasket2);
+            Basket Basket2 = new Basket();
+            Basket2.Add(myArticle2, 50, myCustomer2);  //aggiungo un'altro articolo nel carrello
+            Baskets.AddtoList(Basket2);
 
-           
-
+           //-------------
 
             Baskets.ElencaTutti();
+            // -----   prezzo totale del cliente myCustomer2
+            
+            Console.WriteLine($"-----   prezzo totale del cliente myCustomer1 è =   {Baskets.TotalPrice(myCustomer1)}");
+            Console.WriteLine($"-----   prezzo totale del cliente myCustomer2 è =   {Baskets.TotalPrice(myCustomer2)}");
 
         }
 

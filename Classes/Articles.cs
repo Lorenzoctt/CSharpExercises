@@ -5,11 +5,11 @@ using System.Text;
 
 namespace ECommerce
 {
-    public  class Articles  
+    public  class Articles  :Article
     {
         private static int id_article;
 
-        private static  List<Article> myArticlesList= new List<Article>(); // è possibile istanziare la lista nel costruttore
+        protected static  List<Article> myArticlesList= new List<Article>(); // è possibile istanziare la lista nel costruttore
 
 
 

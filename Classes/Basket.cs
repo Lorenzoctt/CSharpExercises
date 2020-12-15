@@ -9,8 +9,8 @@ namespace ECommerce
     {
         private int id_basket;
         private int Id_Article;
-        private int Quantity;
-        private int Id_User;
+        public int Quantity;
+        public int Id_User;
 
 
 
@@ -28,7 +28,6 @@ namespace ECommerce
 
 
         }
-
 
 
         public void SetEmpy()
@@ -65,26 +64,26 @@ namespace ECommerce
             this.Id_User = myCustomer.Id_user;
 
 
-         //   Baskets.AddtoList(this);// TODO
+            //   Baskets.AddtoList(this);// TODO
         }
 
 
         public string List()
         {
-            return this.Id_Article + "\t" + this.id_basket + "\t" + this.Id_User + "\t" + this.Quantity ;
+            return this.Id_Article + "\t" + this.id_basket + "\t" + this.Id_User + "\t" + this.Quantity;
         }
 
 
-      
+
 
 
 
     }
 
-    public class Baskets
+    public class Baskets : Articles
     {
         private static List<Basket> myBasketList = new List<Basket>();
-        private static int globalID;  
+        private static int globalID;
 
         public static int NewId()  //TODO da definire criterio di crezione globalID  (per utente ?)
         {
@@ -102,17 +101,18 @@ namespace ECommerce
 
         public static void ElencaTutti()
         {
-          
+
             if (myBasketList.Count() > 0)
             {
-                Console.WriteLine("Id_basket" + "\t" + "Id_Article" + "\t" +"Id_User" + "\t" + "Quantity");
+                Console.WriteLine("Id_basket" + "\t" + "Id_Article" + "\t" + "Id_User" + "\t" + "Quantity");
                 foreach (Basket myBasket in myBasketList)
                 {
                     Console.WriteLine(myBasket.Detail());
+
                 }
             }
             else
-            Console.WriteLine("Nessun articolo presente nel carrello");
+                Console.WriteLine("Nessun articolo presente nel carrello");
         }
 
         public static void AddtoList(Basket mybasket)  //aggiunge un basket nella lista
@@ -120,7 +120,38 @@ namespace ECommerce
             myBasketList.Add(mybasket);
 
 
+
+        }
+
+
+
+
+        //public static double TotalPrice(Customer myCustomer)
+        //{
+
+        //    int value =
+        //          (from element in myBasketList
+        //           where element.Id_User == myCustomer.Id_user
+
+        //           select element.Quantity).Sum();
+
+        //    return Convert.ToDouble(value);  // ritorna la  query
+        //}
+
+        public static double TotalPrice(Customer myCustomer)  // eseguo la query sulle 2 liste e calcolo il prezzo per cliente 
+        {
+
+            decimal value =
+                  (from myBasket in myBasketList
+                   join myArticle in myArticlesList on myBasket.Id_User equals myArticle.Id_article
+                   where myBasket.Id_User == myCustomer.Id_user
+
+                   select Convert.ToDecimal(myBasket.Quantity)* Convert.ToDecimal(myArticle.Price)).Sum();
+
+            return Convert.ToDouble(value);  // ritorna il valore
         }
 
     }
+
+
 }
