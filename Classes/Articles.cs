@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ECommerce
 {
-    public  class Articles  :Article
+    public  class Articles  
     {
         private static int id_article;
 

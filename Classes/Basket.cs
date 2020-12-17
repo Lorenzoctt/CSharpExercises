@@ -85,7 +85,7 @@ namespace ECommerce
         private static List<Basket> myBasketList = new List<Basket>();
         private static int globalID;
 
-        public static int NewId()  //TODO da definire criterio di crezione globalID  (per utente ?)
+        public static int  NewId()  //TODO da definire criterio di crezione globalID  (per utente ?)
         {
             globalID = ++globalID;
             return globalID;
