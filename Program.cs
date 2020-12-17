@@ -284,6 +284,7 @@ namespace CSharpExercises
 
         static void CreateCompleteOrder()
         {
+            //Milestone 1
             Customer myCustomer1 = new Customer("Francesco", "Rossi", "francesco.rossi@alice.it");
             Customer myCustomer2 = new Customer("Alberto", "Bianchi", "alberto.bianchi@alice.it");
             Admin myAdmin = new Admin();
@@ -291,7 +292,7 @@ namespace CSharpExercises
             myAdmin.RegUser("lore", "ctt", "lore@aaa");
 
 
-
+            //Milestone 2
             Article myArticle1 = new Article("Videocassetta", (decimal)12.4);
             Articles.Add(myArticle1);
             Article myArticle2 = new Article("martello", (decimal)90.0);
@@ -303,7 +304,7 @@ namespace CSharpExercises
 
             //-----------
 
-
+            //Milestone 3
             Basket Basket1 = new Basket();
             Basket1.Add(myArticle1, 20, myCustomer1);  //aggiungo un articolo nel carrello
             Basket1.Add(myArticle2, 2, myCustomer1);  //aggiungo un articolo nel carrello
