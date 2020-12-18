@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+
 
 namespace ECommerce
 {
@@ -23,9 +25,6 @@ namespace ECommerce
 
         public Basket()//costruttore
         {
-            //  this.myBasketList = new List<Basket>();
-
-
 
         }
 
@@ -45,7 +44,7 @@ namespace ECommerce
 
         public string Detail()
         {
-            return this.Id_basket + "\t\t" + this.Id_Article + "\t\t" + this.Id_User + "\t\t" + this.Quantity;
+            return this.Id_basket + UtiCSV.sep + this.Id_Article + UtiCSV.sep + this.Id_User + UtiCSV.sep + this.Quantity;
         }
 
         /// <summary>
@@ -70,11 +69,8 @@ namespace ECommerce
 
         public string List()
         {
-            return this.Id_Article + "\t" + this.id_basket + "\t" + this.Id_User + "\t" + this.Quantity;
+            return this.Id_Article + UtiCSV.sep + this.id_basket + UtiCSV.sep + this.Id_User + UtiCSV.sep + this.Quantity;
         }
-
-
-
 
 
 
@@ -85,7 +81,10 @@ namespace ECommerce
         private static List<Basket> myBasketList = new List<Basket>();
         private static int globalID;
 
-        public static int  NewId()  //TODO da definire criterio di crezione globalID  (per utente ?)
+
+
+
+        public static int NewId()  //TODO da definire criterio di crezione globalID  (per utente ?)
         {
             globalID = ++globalID;
             return globalID;
@@ -119,8 +118,6 @@ namespace ECommerce
         {
             myBasketList.Add(mybasket);
 
-
-
         }
 
 
@@ -146,11 +143,26 @@ namespace ECommerce
                    join myArticle in myArticlesList on myBasket.Id_User equals myArticle.Id_article
                    where myBasket.Id_User == myCustomer.Id_user
 
-                   select Convert.ToDecimal(myBasket.Quantity)* Convert.ToDecimal(myArticle.Price)).Sum();
+                   select Convert.ToDecimal(myBasket.Quantity) * Convert.ToDecimal(myArticle.Price)).Sum();
+            //----------------
 
             return Convert.ToDouble(value);  // ritorna il valore
         }
 
+        public static void WriteToFileCSV()  // salvo la lista nel file 
+        {
+            string tempData = "";
+            foreach (Basket item in myBasketList)
+            {
+                tempData = tempData + item.List() + Environment.NewLine;
+            }
+
+            File.WriteAllText(UtiCSV.basketPath, tempData); //   SOSTITUISCE SEMPRE //System.UnauthorizedAccessException su estensioni conosciute
+
+            //File.AppendAllText(path, tempData);
+
+
+        }
     }
 
 

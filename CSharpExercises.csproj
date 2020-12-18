@@ -6,9 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Articles.csv.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Classes\ClassDiagram.cd">
       <CustomToolNamespace>ECommerce</CustomToolNamespace>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties packages_4bootstrap_13_14_11_4content_4content_4bootstrap_1css_1map__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

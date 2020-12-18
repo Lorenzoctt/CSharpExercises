@@ -3,20 +3,29 @@ using System.Collections.Generic;
 using ECommerce;  // x accedere alla classe
 //using CSharpExercises; // accedere al namespace e classi
 using NProgramLINQ;
-
-
+using System.IO;
+using System.Linq;
 
 
 namespace CSharpExercises
 {
+    class LEZARTICOLI
+    {
+        //public double Price { get ; set ; }
+        public double Price { get; } = 45;
+        public string PriceDescription = "descrizione";
 
+    }
 
     class Program
     {
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Premere un numero da 1 a 7 ");
+            Console.WriteLine("Premere un numero da 1 a 8 ");
+            Console.WriteLine("7 Ordine completo ");
+            Console.WriteLine("8 Lettura CSV ");
+
             ConsoleKeyInfo level = Console.ReadKey();
 
 
@@ -52,9 +61,15 @@ namespace CSharpExercises
                 case '7': // #9
                     CreateCompleteOrder();  // crea ordine completo
                     break;
+                case '8': // 
+                    LeggiFileCSV();
+                    break;
+                case 'q': // 
+                    Environment.Exit(-1);
+                    break;
+
 
             }
-
 
 
 
@@ -114,15 +129,13 @@ namespace CSharpExercises
             Article myArticle = new Article("Videocassetta", (decimal)12.4);
             myArticle.Update(1, (decimal)12.4, "Videocassetta", 5, (decimal)22);
 
-            //  OrderHeader myOrderHeader = new OrderHeader(myCustomer.Id_user);
-            myCustomer.AddToCart(myArticle);
 
+            myCustomer.AddToCart(myArticle);
 
             Customers myCustomers = new Customers();
 
             myCustomers.Add(myCustomer);
             Console.WriteLine("numero clienti in lista: " + myCustomers.Count());
-            // myCustomers.List(); TODO
 
 
         }
@@ -297,6 +310,8 @@ namespace CSharpExercises
             Articles.Add(myArticle1);
             Article myArticle2 = new Article("martello", (decimal)90.0);
             Articles.Add(myArticle2);
+            Article myArticle3 = new Article("cacciavite", (decimal)10.5);
+            Articles.Add(myArticle3);
 
             Articles.List();
 
@@ -310,17 +325,68 @@ namespace CSharpExercises
             Basket1.Add(myArticle2, 2, myCustomer1);  //aggiungo un articolo nel carrello
             Baskets.AddtoList(Basket1);
 
-            Basket Basket2 = new Basket();
-            Basket2.Add(myArticle2, 50, myCustomer2);  //aggiungo un'altro articolo nel carrello
-            Baskets.AddtoList(Basket2);
 
-           //-------------
+            ///  -------------------------------
+            Article myart = new Article();
+            myart = Articles.SearchArticle("martello");  // ricerco una descrizione e ritorno un articolo Milestone 2
+
+            Basket Basket2 = new Basket();
+            Basket2.Add(myart, 20, myCustomer1);  //Creo e valorizzo il basket
+            Baskets.AddtoList(Basket2);           // aggiungo il basket alla lista 
+            //-------------
 
             Baskets.ElencaTutti();
             // -----   prezzo totale del cliente myCustomer2
-            
+
             Console.WriteLine($"-----   prezzo totale del cliente myCustomer1 è =   {Baskets.TotalPrice(myCustomer1)}");
             Console.WriteLine($"-----   prezzo totale del cliente myCustomer2 è =   {Baskets.TotalPrice(myCustomer2)}");
+            //-----------------------
+            // esercizio 10
+            Articles.WriteToFileCSV();  // SALVA LA LISTA ARTICOLI
+
+            Baskets.WriteToFileCSV(); // SALVA LA LISTA DEL CARRELLO
+
+
+            //-------------------
+
+
+        }
+
+
+        public static void testAggregate()
+        {
+            // >>>> ---------------------    test reduce
+            List<LEZARTICOLI> prices = new List<LEZARTICOLI>();
+            //  prices.Sum();
+
+            List<LEZARTICOLI> myListPippo = new List<LEZARTICOLI>();
+
+            LEZARTICOLI myPippo = new LEZARTICOLI();
+            LEZARTICOLI myPippo2 = new LEZARTICOLI();
+            // errore da qui       var total = prices.Aggregate(0.00, (acc, val) => acc + val.Price);
+
+            // <<<< test Aggregate
+
+        }
+
+
+        public static void LeggiFileCSV()
+        {
+            var lines = File.ReadAllLines(UtiCSV.orderDetailPath);
+
+            var query =
+                from line in lines
+                let row = line.Split(",")
+                let fourthColum = row[3]
+
+                select int.Parse(fourthColum);
+
+
+            Console.WriteLine("-----------------------");
+            Console.WriteLine(query.Sum());
+
+            File.WriteAllText("File.txt2", "testo.AAAAA");  //Scrive su csv
+
 
         }
 
