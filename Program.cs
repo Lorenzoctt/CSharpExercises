@@ -127,7 +127,7 @@ namespace CSharpExercises
             myCustomer.Age = 17;
 
             Article myArticle = new Article("Videocassetta", (decimal)12.4);
-            myArticle.Update(1, (decimal)12.4, "Videocassetta", 5, (decimal)22);
+            myArticle.Update( (decimal)12.4, "Videocassetta", 5, (decimal)22);
 
 
             myCustomer.AddToCart(myArticle);
@@ -212,7 +212,7 @@ namespace CSharpExercises
 
 
             Console.WriteLine(myArticle1.List());
-            myArticle1.Update(1, (decimal)12.5, "Face mask", 15, 22);
+            myArticle1.Update( (decimal)12.5, "Face mask", 15, 22);
 
             Console.WriteLine(myArticle1.List());
 
@@ -297,6 +297,10 @@ namespace CSharpExercises
 
         static void CreateCompleteOrder()
         {
+
+            // conteggio i numeri di articoli del file csv valorizzando  la lista articles
+            Console.WriteLine("il numero di articoli è :" + Articles.Count());
+
             //Milestone 1
             Customer myCustomer1 = new Customer("Francesco", "Rossi", "francesco.rossi@alice.it");
             Customer myCustomer2 = new Customer("Alberto", "Bianchi", "alberto.bianchi@alice.it");
@@ -306,24 +310,29 @@ namespace CSharpExercises
 
 
             //Milestone 2
+            Articles.List();
+
             Article myArticle1 = new Article("Videocassetta", (decimal)12.4);
             Articles.Add(myArticle1);
+
+
             Article myArticle2 = new Article("martello", (decimal)90.0);
             Articles.Add(myArticle2);
-            Article myArticle3 = new Article("cacciavite", (decimal)10.5);
+
+            Article myArticle3 = new Article("pinza", (decimal)10.5);
             Articles.Add(myArticle3);
 
             Articles.List();
 
             Console.WriteLine($"stampo in console il prezzo del martello: {Articles.SearchArticle("martello").Price}");
-
+            Console.WriteLine("adesso il numero di articoli è :" + Articles.Count());
             //-----------
 
             //Milestone 3
             Basket Basket1 = new Basket();
             Basket1.Add(myArticle1, 20, myCustomer1);  //aggiungo un articolo nel carrello
-            Basket1.Add(myArticle2, 2, myCustomer1);  //aggiungo un articolo nel carrello
-            Baskets.AddtoList(Basket1);
+      
+            Baskets.AddtoList(Basket1);  
 
 
             ///  -------------------------------
@@ -332,14 +341,14 @@ namespace CSharpExercises
 
             Basket Basket2 = new Basket();
             Basket2.Add(myart, 20, myCustomer1);  //Creo e valorizzo il basket
-            Baskets.AddtoList(Basket2);           // aggiungo il basket alla lista 
+            Baskets.AddtoList(Basket2);           // aggiungo il basket alla lista  
             //-------------
 
-            Baskets.ElencaTutti();
-            // -----   prezzo totale del cliente myCustomer2
+            Baskets.ElencaTutti();  // elenca gli articoli inseriti del basket
+            // -----   
 
             Console.WriteLine($"-----   prezzo totale del cliente myCustomer1 è =   {Baskets.TotalPrice(myCustomer1)}");
-            Console.WriteLine($"-----   prezzo totale del cliente myCustomer2 è =   {Baskets.TotalPrice(myCustomer2)}");
+           
             //-----------------------
             // esercizio 10
             Articles.WriteToFileCSV();  // SALVA LA LISTA ARTICOLI
@@ -385,7 +394,7 @@ namespace CSharpExercises
             Console.WriteLine("-----------------------");
             Console.WriteLine(query.Sum());
 
-            File.WriteAllText("File.txt2", "testo.AAAAA");  //Scrive su csv
+
 
 
         }

@@ -17,16 +17,10 @@ namespace ECommerce
 
 
 
-        private static List<Article> LoadArticles()  // carica la lista dal file CSV 
+        private static List<Article> LoadArticles() //  carica la lista dal file CSV 
         {
 
-
-            myArticlesList = new List<Article>();
-
-
-            // TODOD  agggiungere lettura file csv -----------------------
             // https://docs.microsoft.com/it-it/dotnet/csharp/programming-guide/concepts/linq/how-to-compute-column-values-in-a-csv-text-file-linq
-
 
 
             //--------------------------
@@ -34,41 +28,49 @@ namespace ECommerce
             if (File.Exists(UtiCSV.articlePath))
             {
                 string[] csvlines = File.ReadAllLines(UtiCSV.articlePath);
+
+                List<Article> CSVList = File.ReadAllLines(UtiCSV.articlePath)
+                                         //.Skip(1)  salta la prima linea
+                                         .Select(v => Articles.FromCsv(v))
+                                         .ToList();
+                return CSVList;
             }
 
+            return null;
+        }
 
-            // TODO : DA POPOLARE  LA LISTA  myArticlesList DA CSV
-
-
-
-
-
-            //--------------------------------------------------------------
-            //   Console.WriteLine(query);
-
-            return myArticlesList;
-
-
-
+        public static Article FromCsv(string v)  // creo un articolo dalla stringa 
+        {
+            Article tempArticle = new Article(v);
+            return tempArticle;
         }
 
 
         /// <summary>
-        /// OK x aggiungere articoli (anche con metodo statico ?)
+        /// OK x aggiungere articoli nella lista (anche con metodo statico ?)
         /// </summary>
         public static void Add(Article _article)  // metodi e proprietà statica che non necessita di istanziarla ma sempre visibile in ogni parte del programma
         {
-            myArticlesList.Add(_article);
-        }
-        public static int NewId()
-        {
-            if (id_article == 0)
+            if (!IsIdArticlePresent(_article.Description))
             {
-                id_article = 1;
+                _article.Id_article = NewId(); //trovo e valorizzo l'ID
+                myArticlesList.Add(_article);
+                Console.WriteLine("Articolo <" + _article.Description + "> inserito nel database !");
             }
-            else { id_article = ++id_article; }
-
-            return id_article;
+            else
+                Console.WriteLine("Articolo <" + _article.Description + "> già presente nel database");
+        }
+        public static int NewId()  // cerco l'ultimo numero inserito e lo incremento
+        {
+            if (myArticlesList.Count() > 0)
+            {
+                int ret = (
+               from fieldtmp in myArticlesList
+               select (fieldtmp.Id_article)).Max();
+                return ret + 1;
+            }
+            else
+                return 1;
         }
         public static int Count()
         {
@@ -139,6 +141,18 @@ namespace ECommerce
             return null;
         }
 
+        public static Boolean IsIdArticlePresent(string myDescription)  // ricerco per descrizione 
+        {
+            int ret = (
+            from fieldtmp in myArticlesList
+            where fieldtmp.Description == myDescription
+
+            select fieldtmp.Description).Count();
+
+
+
+            return (ret > 0);
+        }
 
         public static void WriteToFileCSV()  // salvo la lista nel file 
         {
@@ -151,8 +165,6 @@ namespace ECommerce
             File.WriteAllText(UtiCSV.articlePath, tempData); //   SOSTITUISCE SEMPRE System.UnauthorizedAccessException su estensioni conosciute
 
             //File.AppendAllText(ArticlePath, tempData);
-
-
         }
 
 
