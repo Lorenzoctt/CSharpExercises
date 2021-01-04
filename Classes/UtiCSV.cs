@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ECommerce
 {
@@ -35,6 +36,16 @@ namespace ECommerce
             {
                 return Int32.Parse(testo);
             }
+        }
+
+
+
+        public static void AppendToFilexxx()  // salvo la lista nel file TODO x prova
+        {
+            string tempData = "";
+            
+            File.AppendAllText("C:temp\aa.txt", tempData); 
+        
         }
     }
 }

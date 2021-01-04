@@ -140,6 +140,14 @@ namespace ECommerce
             }
             return null;
         }
+        //public static Article SearchArticle(string myDescription)  TODO 
+        //{ 
+        //    Article retArticle = (from item in myArticlesList
+        //                          where item.Description == myDescription
+        //                          select item).First();
+        //            return retArticle;
+        //}
+
 
         public static Boolean IsIdArticlePresent(string myDescription)  // ricerco per descrizione 
         {

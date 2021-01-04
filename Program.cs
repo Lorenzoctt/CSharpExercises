@@ -22,60 +22,19 @@ namespace CSharpExercises
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Premere un numero da 1 a 8 ");
-            Console.WriteLine("7 Ordine completo ");
-            Console.WriteLine("8 Lettura CSV ");
-
-            ConsoleKeyInfo level = Console.ReadKey();
-
-
-            switch (level.KeyChar)
+            bool showMenu = true;
+            while (showMenu)
             {
-                case '1':
-                    Console.WriteLine("funcList(;");
-                    funcList();
-                    break;
-                case '2':
-                    Console.WriteLine(" CreateOrder()");
-                    CreateOrder();//OK   Interaction between classes (#3)
-                    TestCustomer();  //OK  test customer e admin
-                    break;
-                case '3':
-                    Console.WriteLine("testa classi article e articles (statico)");
-                    TestaArticoli();  // testa classi article e articles (statico)
-                    TestaArticoliBis();
-                    break;
-                case '4':
-                    Console.WriteLine(" esempio di utilizzo Console.WriteLine ReadKey");
-                    funcConsole();  // esempio di utilizzo Console.WriteLine ReadKey
-                    break;
-                case '5':
-                    Console.WriteLine("prova Interface");
-                    TestInferface();  //prova Interface
-                    break;
-                case '6':
-                    Console.WriteLine("prova LINQ");
-                    ProgramLINQ.TestLINQ();
-                    ProgramLINQ.WorkLinq2(); // Working with LINQ pt2(#8)
-                    break;
-                case '7': // #9
-                    CreateCompleteOrder();  // crea ordine completo
-                    break;
-                case '8': // 
-                    LeggiFileCSV();
-                    break;
-                case 'q': // 
-                    Environment.Exit(-1);
-                    break;
-
-
+                showMenu = MainMenu();
             }
 
 
 
-
-
-            if (false)  // non eseguo
+           
+            
+            
+            
+            if (false)  // non eseguo   // rilevo i parametri ricevuti
             {
                 // Scrivi un programma completo di namespace, che legge il tuo nome dagli argomenti di Main() e lo 
                 // ristampa trasformandolo in uppercase.Carica le modifiche sul repo Github.
@@ -83,14 +42,113 @@ namespace CSharpExercises
                 {
                     Console.WriteLine($"Il parametro passato è {args[0]}");
                 }
-                else Console.WriteLine("Nessun parametro passato !");
-
+                else 
+                    Console.WriteLine("Nessun parametro passato !");
             }
 
 
 
 
         }
+
+
+
+        private static bool MainMenu()
+        {
+
+
+
+
+            Console.Clear();
+            Console.WriteLine("Choose an option:");
+            Console.WriteLine("1)  funcList() ");
+            Console.WriteLine("2) Create Order");
+            Console.WriteLine("3) testa classi article e articles(statico)");
+            Console.WriteLine("4) esempio di utilizzo Console.WriteLine ReadKey");
+            Console.WriteLine("5) prova Interface");
+            Console.WriteLine("6) prova LINQ");
+            Console.WriteLine("7) #9 crea ordine completo");
+            Console.WriteLine("8) LeggiFileCSV ");
+            Console.WriteLine("9) Ereditarieta");
+
+            Console.WriteLine("q) Esci");
+            Console.Write("\r\nSelect an option: ");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    funcList();
+                    Console.WriteLine("Premere un tasto per continuare");
+                    Console.ReadLine();
+                    return true;
+                case "2":
+                    CreateOrder();//OK   Interaction between classes (#3)
+                    TestCustomer();  //OK  test customer e admin
+                    Console.WriteLine("Premere un tasto per continuare");
+                    Console.ReadLine();
+                    return true;
+                case "3":
+                    TestaArticoli();  // testa classi article e articles (statico)
+                    TestaArticoliBis();
+                    Console.WriteLine("Premere un tasto per continuare");
+                    Console.ReadLine();
+                    return true;
+                case "4":
+                    Console.WriteLine(" esempio di utilizzo Console.WriteLine ReadKey");
+                    funcConsole();  // esempio di utilizzo Console.WriteLine ReadKey
+                    Console.WriteLine("Premere un tasto per continuare");
+                    Console.ReadLine();
+                    return true;
+                case "5":
+                    Console.WriteLine("prova Interface");
+                    TestInferface();  //prova Interface
+                    return true;
+
+                case "6":
+                    Console.WriteLine("prova LINQ");
+                    ProgramLINQ.TestLINQ();
+                    ProgramLINQ.WorkLinq2(); // Working with LINQ pt2(#8)
+                    Console.WriteLine("Premere un tasto per continuare");
+                    Console.ReadLine();
+                    return true;
+
+                case "7":
+                    CreateCompleteOrder();  // #9 crea ordine completo
+                    Console.WriteLine("Premere un tasto per continuare");
+                    Console.ReadLine();
+                    return true;
+                case "8":
+                    LeggiFileCSV();
+                    Console.WriteLine("Premere un tasto per continuare");
+                    Console.ReadLine();
+                    return true;
+
+                case "9": // 
+                    Ereditarieta();
+                    NamespaceErrori.ClassErrori.MainPrg();
+                    Console.WriteLine("Premere un tasto per continuare");
+                    Console.ReadLine();
+                    return true;
+
+
+                case "q":
+                    return false;
+                default:
+                    return true;
+            }
+
+        }
+
+        static void Ereditarieta()
+        {
+
+            insegnante myinsegnante = new insegnante("lore", "pippo");
+
+            Console.WriteLine(myinsegnante.Login("lore"));
+            myinsegnante.ConvertToInt("0");
+
+        }
+
 
         static void funcConsole()  // esempio di utilizzo Console.WriteLine ReadKey
         {
@@ -127,7 +185,7 @@ namespace CSharpExercises
             myCustomer.Age = 17;
 
             Article myArticle = new Article("Videocassetta", (decimal)12.4);
-            myArticle.Update( (decimal)12.4, "Videocassetta", 5, (decimal)22);
+            myArticle.Update((decimal)12.4, "Videocassetta", 5, (decimal)22);
 
 
             myCustomer.AddToCart(myArticle);
@@ -212,7 +270,7 @@ namespace CSharpExercises
 
 
             Console.WriteLine(myArticle1.List());
-            myArticle1.Update( (decimal)12.5, "Face mask", 15, 22);
+            myArticle1.Update((decimal)12.5, "Face mask", 15, 22);
 
             Console.WriteLine(myArticle1.List());
 
@@ -324,15 +382,15 @@ namespace CSharpExercises
 
             Articles.List();
 
-            Console.WriteLine($"stampo in console il prezzo del martello: {Articles.SearchArticle("martello").Price}");
+            Console.WriteLine($"stampo in console il prezzo del martello: {Articles.SearchArticle("martello gggg").Price}");
             Console.WriteLine("adesso il numero di articoli è :" + Articles.Count());
             //-----------
 
             //Milestone 3
             Basket Basket1 = new Basket();
             Basket1.Add(myArticle1, 20, myCustomer1);  //aggiungo un articolo nel carrello
-      
-            Baskets.AddtoList(Basket1);  
+
+            Baskets.AddtoList(Basket1);
 
 
             ///  -------------------------------
@@ -348,7 +406,7 @@ namespace CSharpExercises
             // -----   
 
             Console.WriteLine($"-----   prezzo totale del cliente myCustomer1 è =   {Baskets.TotalPrice(myCustomer1)}");
-           
+
             //-----------------------
             // esercizio 10
             Articles.WriteToFileCSV();  // SALVA LA LISTA ARTICOLI
