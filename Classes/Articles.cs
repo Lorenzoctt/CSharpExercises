@@ -53,9 +53,11 @@ namespace ECommerce
         {
             if (!IsIdArticlePresent(_article.Description))
             {
-                _article.Id_article = NewId(); //trovo e valorizzo l'ID
+                int nuovoId = NewId();
+                _article.Id_article = nuovoId; //trovo e valorizzo l'ID
                 myArticlesList.Add(_article);
                 Console.WriteLine("Articolo <" + _article.Description + "> inserito nel database !");
+                WriteToFileCSV();
             }
             else
                 Console.WriteLine("Articolo <" + _article.Description + "> già presente nel database");
@@ -82,6 +84,7 @@ namespace ECommerce
         public static void Delete(Article _article)  //OK funziona 
         {
             myArticlesList.Remove(_article);
+            WriteToFileCSV();
         }
         public static void Delete(int myIdArticle)  //OK funziona 
         {
@@ -93,7 +96,8 @@ namespace ECommerce
                 {
                     Console.WriteLine("CANCELLAZIONE : " + myArticle.List());
                     myArticlesList.Remove(myArticle);
-                    return;  //esco dal ciclo perchè la lista è cambiata e ilprossimo giro darebbe errore
+                    WriteToFileCSV();
+                    return;  //  esco dal ciclo perchè la lista è cambiata e ilprossimo giro darebbe errore
 
 
                 }
@@ -162,7 +166,7 @@ namespace ECommerce
             return (ret > 0);
         }
 
-        public static void WriteToFileCSV()  // salvo la lista nel file 
+        private static void WriteToFileCSV()  // salvo la lista nel file 
         {
             string tempData = "";
             foreach (Article item in myArticlesList)

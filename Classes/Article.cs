@@ -37,7 +37,7 @@ namespace ECommerce
             get
             { return id_article; }
             set
-            { id_article = Id_article; }
+            { id_article = value; }
 
         }
 

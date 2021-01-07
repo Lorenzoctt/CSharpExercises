@@ -90,7 +90,7 @@ namespace ECommerce
             return globalID;
         }
 
-        public void List()
+        public static void List()
         {
             foreach (Basket myBasket in myBasketList)
             {
@@ -117,6 +117,7 @@ namespace ECommerce
         public static void AddtoList(Basket mybasket)  //aggiunge un basket nella lista
         {
             myBasketList.Add(mybasket);
+            WriteToFileCSV();
 
         }
 
@@ -149,7 +150,7 @@ namespace ECommerce
             return Convert.ToDouble(value);  // ritorna il valore
         }
 
-        public static void WriteToFileCSV()  // salvo la lista nel file 
+        private static void WriteToFileCSV()  // salvo la lista nel file 
         {
             string tempData = "";
             foreach (Basket item in myBasketList)
@@ -157,6 +158,7 @@ namespace ECommerce
                 tempData = tempData + item.List() + Environment.NewLine;
             }
 
+            // TODO SOVRASCRIVO  , DA VERIFICARE SE CORRETTO
             File.WriteAllText(UtiCSV.basketPath, tempData); //   SOSTITUISCE SEMPRE //System.UnauthorizedAccessException su estensioni conosciute
 
             //File.AppendAllText(path, tempData);
