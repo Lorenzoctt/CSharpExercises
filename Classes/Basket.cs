@@ -124,7 +124,7 @@ namespace ECommerce
 
 
 
-
+        // ritorna la somma 
         //public static double TotalPrice(Customer myCustomer)
         //{
 
