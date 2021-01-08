@@ -137,6 +137,7 @@ namespace ECommerce
         //    return Convert.ToDouble(value);  // ritorna la  query
         //}
 
+
         public static double TotalPrice(Customer myCustomer)  // eseguo la query sulle 2 liste e calcolo il prezzo per cliente 
         {
 
