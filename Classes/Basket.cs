@@ -76,7 +76,8 @@ namespace ECommerce
 
     }
 
-    public class Baskets : Articles
+    public class Baskets : Articles  // eredita da articoli (per poter utilizzare la lista ) TODO verificare se è corretta la logica 
+                                    // di ereditare la lista anagrafica degli articoli
     {
         private static List<Basket> myBasketList = new List<Basket>();
         private static int globalID;

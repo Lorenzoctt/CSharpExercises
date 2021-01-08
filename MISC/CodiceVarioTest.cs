@@ -197,7 +197,12 @@ namespace CSharpExercises
             //--
             Article myArticleSearched = Articles.SearchArticle("penna"); //Finishing the ecommerce structure (#6)
             Console.WriteLine("l'id ricercato è " + myArticleSearched.Id_article);
-            Articles.Delete(4);  // CANCELLO PER ID
+         
+            if (Articles.Delete(myArticleSearched.Id_article))
+            {  // CANCELLO PER ID
+                Console.WriteLine("Articolo cancellato");
+            }
+            else Console.WriteLine("Articolo non trovato");
 
 
         }

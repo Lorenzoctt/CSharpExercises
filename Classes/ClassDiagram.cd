@@ -11,7 +11,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ECommerce.Customers">
-    <Position X="0.5" Y="5.5" Width="1.5" />
+    <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAQAAABAAAAAAgAAQAAAAAAAAAAAAAAAAAAgI=</HashCode>
       <FileName>Classes\Customers.cs</FileName>
@@ -34,7 +34,7 @@
   <Class Name="ECommerce.Article">
     <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIQAAAAAAQAgAAAAIAAAAAAAgABAAMAAAAAAAACAAAI=</HashCode>
+      <HashCode>AIQAAAAAAQAgAAAAIAAAAAAAgABAAIAAAAAAAACAAAI=</HashCode>
       <FileName>Classes\Article.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -56,14 +56,14 @@
   <Class Name="ECommerce.Baskets">
     <Position X="3" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAAAABAAAAgAAAgQAAAEAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAAAABAAAAgAAAgQAAAEAAAAIAAAAI=</HashCode>
       <FileName>Classes\Basket.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ECommerce.Articles">
     <Position X="6.25" Y="4.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAYAAAAACAAABAAAAAAAAAQAAAEIAAAEAAAAACCAAAI=</HashCode>
+      <HashCode>AAYAAAAACAAABAAAAAAAAAQAAAEIAAAAAAAAEKCCAAI=</HashCode>
       <FileName>Classes\Articles.cs</FileName>
     </TypeIdentifier>
   </Class>

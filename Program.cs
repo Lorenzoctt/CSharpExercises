@@ -20,7 +20,7 @@ namespace CSharpExercises
 
     class Program
     {
-        private  static   Customer myCustomer = new Customer("Francesco", "Rossi", "francesco.rossi@alice.it");  // TODO FARE FUNZIONE LOGIN
+        private static Customer myCustomer = new Customer("Francesco", "Rossi", "francesco.rossi@alice.it");  // TODO FARE FUNZIONE LOGIN
         static void Main(string[] args)
         {
 
@@ -56,11 +56,11 @@ namespace CSharpExercises
         private static bool MainMenu()
         {
             Console.Clear();
-            Console.WriteLine("Choose an option:");
+            Console.WriteLine("Scegli una opzione :");
             Console.WriteLine("1) Lista articoli ");
             Console.WriteLine("2) Inserimento articolo  ");
-            //Console.WriteLine("3) ricerca articolo per descrizione  >>TODO");
-            //Console.WriteLine("4) cancellazione articolo  >>TODO");
+            Console.WriteLine("3) Ricerca articolo per descrizione");
+            Console.WriteLine("4) Cancellazione articolo ");
             Console.WriteLine("5) Inserimento articolo nel carrello  ");
             //Console.WriteLine("6) Lista del carrello >>TODO");
             //Console.WriteLine("7) Crea ordine ");
@@ -74,6 +74,7 @@ namespace CSharpExercises
             switch (Console.ReadLine())
             {
                 case "1":
+                    Console.Clear();
                     Console.WriteLine("LISTA ARTICOLI :");
                     Articles.List();
                     Console.WriteLine("---------------------------------------------");
@@ -81,56 +82,78 @@ namespace CSharpExercises
                     Console.ReadLine();
                     return true;
                 case "2":
+                    Console.Clear();
+                    Console.WriteLine("2) Inserimento articolo  ");
                     CreaArticolo();
+                    Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
                     return true;
                 case "3":
-                    Console.WriteLine("TODO");
+                    Console.Clear();
+                    Console.WriteLine("Ricerca per descrizione");
+                    RicercaArticolo();
+                    Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
                     return true;
                 case "4":
-                    Console.WriteLine("TODO");
+                    Console.WriteLine("Cancellazione articolo in anagrafica ");
+                    CancellaArticolo();
+                    Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
                     return true;
                 case "5":
+                    Console.Clear();
+                    Console.WriteLine("5) Inserimento articolo nel carrello  ");
                     AddToBasket();
+                    Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
 
                     return true;
 
                 case "6":
+                    Console.Clear();
                     Console.WriteLine("TODO");
+                    Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
                     return true;
 
                 case "7":
+                    Console.Clear();
                     Console.WriteLine("TODO");
+                    Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
                     return true;
                 case "8":
+                    Console.Clear();
                     Console.WriteLine("TODO");
+                    Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
                     return true;
 
-                case "9": // 
+                case "9": //
+                    Console.Clear();
                     Console.WriteLine("TODO");
+                    Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
                     return true;
 
                 case "10":
+                    Console.Clear();
                     Console.WriteLine("TODO");
+                    Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
                     return true;
                 case "11":
+                    Console.Clear();
                     return CodiceVarioTest.MainMenuTestVari();
 
 
@@ -143,8 +166,43 @@ namespace CSharpExercises
         }
 
 
+        static void RicercaArticolo()
+        {
+            string descrizione;
+            Console.WriteLine("Inserisci la descrizione esatta");
+            descrizione = Console.ReadLine();
 
 
+            Article myArticleSearched = Articles.SearchArticle(descrizione); //Finishing the ecommerce structure (#6)
+            if (!(myArticleSearched == null))
+            {
+                Console.WriteLine("l'id ricercato è " + myArticleSearched.Id_article);
+                Console.WriteLine("elenco campi: ");
+                Console.WriteLine(myArticleSearched.List());
+            }
+            else Console.WriteLine("Articolo non trovato");
+
+        }
+
+        static void CancellaArticolo()
+        {
+            int idArticolo;
+            Console.WriteLine("Inserisci il codice articolo");
+
+
+            bool success = int.TryParse(Console.ReadLine(), out idArticolo);
+            if (success)
+            {
+
+                if (Articles.Delete(idArticolo))
+                {  // CANCELLO PER ID
+                    Console.WriteLine("Articolo cancellato");
+                }
+                else Console.WriteLine("Articolo non trovato");
+            }
+            else Console.WriteLine("Valore errato");
+
+        }
 
         static void CreaArticolo()
         {
@@ -165,13 +223,18 @@ namespace CSharpExercises
         {
             int quantita = 1;
             string descrizione;
+
             Console.WriteLine("Inserisci la descrizione :");
             descrizione = Console.ReadLine();
+            Console.WriteLine("Inserisci la quantita :");
+            quantita = int.Parse(Console.ReadLine());
 
             Article myArticleSearched = Articles.SearchArticle(descrizione); //Finishing the ecommerce structure (#6)
-            Console.WriteLine("l'id ricercato è " + myArticleSearched.Id_article);
+
+
             if (!(myArticleSearched == null))
             {
+                Console.WriteLine("l'id ricercato è " + myArticleSearched.Id_article);
                 Basket myBasket = new Basket();
                 myBasket.Add(myArticleSearched, quantita, myCustomer);
 
@@ -182,6 +245,8 @@ namespace CSharpExercises
 
             }
             else Console.WriteLine($"{descrizione} non trovato");
+
+            Baskets.List();
         }
 
 

@@ -86,7 +86,7 @@ namespace ECommerce
             myArticlesList.Remove(_article);
             WriteToFileCSV();
         }
-        public static void Delete(int myIdArticle)  //OK funziona 
+        public static bool Delete(int myIdArticle)  //OK funziona 
         {
             foreach (Article myArticle in myArticlesList)
             {
@@ -97,11 +97,11 @@ namespace ECommerce
                     Console.WriteLine("CANCELLAZIONE : " + myArticle.List());
                     myArticlesList.Remove(myArticle);
                     WriteToFileCSV();
-                    return;  //  esco dal ciclo perchè la lista è cambiata e ilprossimo giro darebbe errore
-
-
+                    return true;  //  esco dal ciclo perchè la lista è cambiata e ilprossimo giro darebbe errore
                 }
+
             }
+            return false;
         }
         public static void Update()
         {
