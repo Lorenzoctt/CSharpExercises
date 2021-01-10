@@ -67,8 +67,8 @@
       <FileName>Classes\Articles.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="ECommerce.IBasket" Collapsed="true">
-    <Position X="3.25" Y="1" Width="1.5" />
+  <Interface Name="ECommerce.IBasket">
+    <Position X="3" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Classes\Ibasket.cs</FileName>

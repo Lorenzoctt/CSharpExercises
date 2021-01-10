@@ -235,8 +235,7 @@ namespace CSharpExercises
             if (!(myArticleSearched == null))
             {
                 Console.WriteLine("l'id ricercato è " + myArticleSearched.Id_article);
-                Basket myBasket = new Basket();
-                myBasket.Add(myArticleSearched, quantita, myCustomer);
+                Basket myBasket = new Basket(myArticleSearched, quantita, myCustomer);
 
                 Baskets.AddtoList(myBasket);
 

@@ -25,9 +25,17 @@ namespace ECommerce
 
         public Basket()//costruttore
         {
-
         }
 
+        public Basket(in Article myArticle, int myQta, in Customer myCustomer)
+        {
+
+            this.id_basket = Baskets.NewId();
+            this.Id_Article = myArticle.Id_article;
+            this.Quantity = myQta;
+            this.Id_User = myCustomer.Id_user;
+
+        }
 
         public void SetEmpy()
         {
@@ -54,17 +62,18 @@ namespace ECommerce
 
 
 
-        public void Add(in Article myArticle, int myQta, in Customer myCustomer)
-        {
+        //public void Add(in Article myArticle, int myQta, in Customer myCustomer)
+        //{
 
-            this.id_basket = Baskets.NewId();
-            this.Id_Article = myArticle.Id_article;
-            this.Quantity = myQta;
-            this.Id_User = myCustomer.Id_user;
+        //    this.id_basket = Baskets.NewId();
+        //    this.Id_Article = myArticle.Id_article;
+        //    this.Quantity = myQta;
+        //    this.Id_User = myCustomer.Id_user;
 
 
-            //   Baskets.AddtoList(this);// TODO
-        }
+        
+        //}
+
 
 
         public string List()

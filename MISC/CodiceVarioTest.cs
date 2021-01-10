@@ -247,13 +247,13 @@ namespace CSharpExercises
 
             Articles.List();
 
-            Console.WriteLine($"stampo in console il prezzo del martello: {Articles.SearchArticle("martello gggg").Price}");
+            Console.WriteLine($"stampo in console il prezzo del martello: {Articles.SearchArticle("martello").Price}");
             Console.WriteLine("adesso il numero di articoli è :" + Articles.Count());
             //-----------
 
             //Milestone 3
-            Basket Basket1 = new Basket();
-            Basket1.Add(myArticle1, 20, myCustomer1);  //aggiungo un articolo nel carrello
+            Basket Basket1 = new Basket(myArticle1, 20, myCustomer1); //aggiungo un articolo nel carrello
+           // Basket1.Add(myArticle1, 20, myCustomer1);  
 
             Baskets.AddtoList(Basket1);
 
@@ -262,8 +262,8 @@ namespace CSharpExercises
             Article myart = new Article();
             myart = Articles.SearchArticle("martello");  // ricerco una descrizione e ritorno un articolo Milestone 2
 
-            Basket Basket2 = new Basket();
-            Basket2.Add(myart, 20, myCustomer1);  //Creo e valorizzo il basket
+            Basket Basket2 = new Basket(myart, 20, myCustomer1); //Creo e valorizzo il basket
+            
             Baskets.AddtoList(Basket2);           // aggiungo il basket alla lista  
             //-------------
 
@@ -340,7 +340,7 @@ namespace CSharpExercises
             Console.WriteLine("4) esempio di utilizzo Console.WriteLine ReadKey");
             Console.WriteLine("5) prova Interface");
             Console.WriteLine("6) prova LINQ");
-            //  Console.WriteLine("7) #9 crea ordine completo");
+             Console.WriteLine("7) #9 crea ordine completo");
             Console.WriteLine("8) LeggiFileCSV ");
             Console.WriteLine("9) Ereditarieta");
             Console.WriteLine("10) Test Aggregate ");
