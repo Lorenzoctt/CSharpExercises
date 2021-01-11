@@ -129,22 +129,22 @@ namespace ECommerce
             throw new System.NotImplementedException();
         }
 
-        /// <summary>
-        /// cerca per descrizione e ritorna un solo articolo
-        /// </summary>
-        public static Article SearchArticle(string myDescription)
+
+        public static  Article SearchArticle(string myDescription)
         {
-            foreach (Article tmpArticle in myArticlesList)
-            {
-                if (tmpArticle.Description == myDescription)
-                {
-                    return tmpArticle;
-                }
+            //    foreach (Article tmpArticle in myArticlesList)
+            //    {
+            //        if (tmpArticle.Description == myDescription)
+            //        {
+            //            return tmpArticle;
+            //        }
 
-            }
-            return null;
+            //    }
+            //    return null;
+
+            return myArticlesList.Find(x => x.Description == myDescription);
+
         }
-
 
 
 
