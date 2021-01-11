@@ -42,9 +42,15 @@ namespace ECommerce
             return query.ToList();  // ritorna la  query
 
         }
+
+
+
         public void AddToList(User myUser)
         {
             UsersList.Add(myUser);
+
+            List<User> myListausers = new List<User>();
+        
         }
 
 

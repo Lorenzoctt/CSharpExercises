@@ -1,15 +1,10 @@
-﻿//
-// istruzioni LINQ
-// ORM 
-// Search article.description ==param
-
-//  from element in collection
-//  where element =="qualcosa"
-// select element 
+﻿
 
 using System.Collections.Generic;
 using System.Linq;
-//using NProgramLINQ;
+using System;
+
+
 
 namespace NExLinq
 {
@@ -27,16 +22,10 @@ namespace NExLinq
                 let cityTouppercase = city.ToUpper()
 
                 select cityTouppercase;
-            ////  END 
-            ///
+
             return query.First();  // ritorna il primo record
 
-            //IEnumerable<int>
 
-            //IEnumerable < int >= query =
-            //form number in numbers
-            //where number == 45
-            //    select number;
         }
 
 
@@ -53,8 +42,7 @@ namespace NExLinq
                 let cityTouppercase = city.ToUpper()
 
                 select cityTouppercase;
-            ////  END 
-            ///
+
             return query;
 
 
@@ -62,28 +50,6 @@ namespace NExLinq
 
         //-----------------------------------
 
-        public static IEnumerable<string> FilteringAll2()  // ritorna una query e si comporta come una lista
-        {
-            string[] cities = new string[] { "Roma", "Milano" };
-
-            // LINQ
-
-            IEnumerable<string> query =
-                from city in cities
-                where city == "Roma"
-
-                let cityTouppercase = city.ToUpper()
-
-                select cityTouppercase;
-            ////  END 
-            ///
-            return query;  // ritonra il primo record
-
-
-        }
-
-        ///---------------------
-        ///
 
         public static IEnumerable<string> GetCity(string myCity)  // ritorna un IEnumerable
         {
@@ -118,7 +84,7 @@ namespace NExLinq
         // KO
         public static IEnumerable<string> GetMonte(List<ClsVetta> ListTemp, string mypar)  // funzione che ritorna un IEnumerable
         {
-           
+
             IEnumerable<string> query =
               from fieldtmp in ListTemp
               where fieldtmp.Nome == mypar
@@ -126,6 +92,39 @@ namespace NExLinq
               select fieldtmp.Nome;
 
             return query;  // ritorna la  query
+        }
+
+
+
+        private   static  List<Macchina> QueryPiuCampi(int myCilindrata)  // QUERY CON PIU CAMPI RISULTATO
+        {
+
+
+            List<Macchina> MacchineList = new List<Macchina> { new Macchina { nome = "fiat", cilindrata = 1600 }, new Macchina { nome = "Opel", cilindrata = 1400 } };
+
+            IEnumerable<Macchina> query =
+             from elemento in MacchineList
+             where elemento.cilindrata == myCilindrata
+
+             select elemento;
+
+            return query.ToList();  // ritorna la lista - query
+
+        }
+
+        public static void TestQueryPiucampi()
+        {
+            Console.WriteLine(QueryPiuCampi(1400).Count());
+        }
+  
+      
+
+        class Macchina
+        {
+            public string nome;
+            public int cilindrata;
+
+
         }
 
     }

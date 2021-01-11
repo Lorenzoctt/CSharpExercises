@@ -72,12 +72,13 @@ namespace NProgramLINQ
             // stampo gli elementi trovati
             foreach (var myValue in LinqUtils.GetMonte(ListVetteTot, "Monte Falco"))
             {
-                Console.WriteLine(myValue); 
+                Console.WriteLine(myValue);
             }
 
         }
-
+        
     }
+
 
 }
 

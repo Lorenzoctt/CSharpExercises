@@ -345,6 +345,7 @@ namespace CSharpExercises
             Console.WriteLine("9) Ereditarieta");
             Console.WriteLine("10) Test Aggregate ");
             Console.WriteLine("11) Test utente filtrato e stampato  ");
+            Console.WriteLine("11) Test query con piu campi  ");
             Console.WriteLine("M) ESCI");
             Console.Write("\r\nSelect an option: ");
 
@@ -412,6 +413,12 @@ namespace CSharpExercises
 
                 case "11":
                     testUtente();
+                    Console.WriteLine("remere un tasto per continuare");
+                    Console.ReadLine();
+                    return true;
+
+                case "12":
+                    NExLinq.LinqUtils.TestQueryPiucampi();
                     Console.WriteLine("Test utente filtrato e stampato  ");
                     Console.ReadLine();
                     return true;
