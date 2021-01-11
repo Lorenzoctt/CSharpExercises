@@ -12,6 +12,7 @@ namespace ECommerce
 
         private int _age;
         private string _name;
+        protected string cosa;
 
         //      protected Name {get; set }
 

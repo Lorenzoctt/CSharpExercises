@@ -15,12 +15,12 @@ namespace NExLinq
 {
     class LinqUtils
     {
-        public static string Filtering()             // LINQ
+        public static string Filtering()             // LINQ   ARRAY DI STRINGA  (solo 1 record)
         {
 
             string[] cities = new string[] { "Roma", "Milano" };
 
-            var query =
+            IEnumerable<string> query =
                 from city in cities
                 where city == "Roma"
 
@@ -40,7 +40,7 @@ namespace NExLinq
         }
 
 
-        public static IEnumerable<string> FilteringAll()  // ritorna una query e si comporta come una lista
+        public static IEnumerable<string> FilteringAll()  // ritorna una query di un campo e si comporta come una lista
         {
             string[] cities = new string[] { "Roma", "Milano" };
 

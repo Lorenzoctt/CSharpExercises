@@ -16,7 +16,7 @@ namespace ECommerce
         {
             string tempData = "";
             List<string> tempUsersList = GetC();
-     
+
 
 
             foreach (string item in tempUsersList)
@@ -24,16 +24,12 @@ namespace ECommerce
                 tempData = tempData + item + Environment.NewLine;
             }
 
-            File.WriteAllText(usersC_Path, tempData); 
+            File.WriteAllText(usersC_Path, tempData);
         }
 
 
-        public void AddToList(User utente)
-        {
-            UsersList.Add(utente);
-        }
 
-        private  List<string> GetC()
+        private List<string> GetC()
         {
             IEnumerable<string> query =
              from elemento in UsersList
@@ -46,8 +42,10 @@ namespace ECommerce
             return query.ToList();  // ritorna la  query
 
         }
-
-
+        public void AddToList(User myUser)
+        {
+            UsersList.Add(myUser);
+        }
 
 
     }
