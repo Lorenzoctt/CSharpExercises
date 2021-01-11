@@ -5,7 +5,7 @@ using System.IO;
 
 namespace ECommerce
 {
-    class Users : User
+    class Users
     {
         private static List<User> UsersList = new List<User>();
         private const string usersC_Path = @"C:\Users\Lorenzo\Desktop\EserciziC#\CSharpExercises\Data\Users_C.csv";
