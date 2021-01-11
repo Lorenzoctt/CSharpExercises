@@ -9,7 +9,7 @@ namespace CSharpExercises
 {
     class CodiceVarioTest
     {
-         static void funcList()  // utilizzo di una lista 
+        static void funcList()  // utilizzo di una lista 
         {
 
             var namesList = new List<string> { "Aldo", "filippo", "giovanni" };
@@ -197,7 +197,7 @@ namespace CSharpExercises
             //--
             Article myArticleSearched = Articles.SearchArticle("penna"); //Finishing the ecommerce structure (#6)
             Console.WriteLine("l'id ricercato è " + myArticleSearched.Id_article);
-         
+
             if (Articles.Delete(myArticleSearched.Id_article))
             {  // CANCELLO PER ID
                 Console.WriteLine("Articolo cancellato");
@@ -253,7 +253,7 @@ namespace CSharpExercises
 
             //Milestone 3
             Basket Basket1 = new Basket(myArticle1, 20, myCustomer1); //aggiungo un articolo nel carrello
-           // Basket1.Add(myArticle1, 20, myCustomer1);  
+                                                                      // Basket1.Add(myArticle1, 20, myCustomer1);  
 
             Baskets.AddtoList(Basket1);
 
@@ -263,7 +263,7 @@ namespace CSharpExercises
             myart = Articles.SearchArticle("martello");  // ricerco una descrizione e ritorno un articolo Milestone 2
 
             Basket Basket2 = new Basket(myart, 20, myCustomer1); //Creo e valorizzo il basket
-            
+
             Baskets.AddtoList(Basket2);           // aggiungo il basket alla lista  
             //-------------
 
@@ -276,7 +276,7 @@ namespace CSharpExercises
             // esercizio 10
             // Articles.WriteToFileCSV();  // SALVA LA LISTA ARTICOLI dalla classe
 
-          //  Baskets.WriteToFileCSV(); // SALVA LA LISTA DEL CARRELLO
+            //  Baskets.WriteToFileCSV(); // SALVA LA LISTA DEL CARRELLO
 
 
             //-------------------
@@ -329,7 +329,7 @@ namespace CSharpExercises
 
 
 
-        public  static bool MainMenuTestVari()
+        public static bool MainMenuTestVari()
         {
 
             Console.Clear();
@@ -340,7 +340,7 @@ namespace CSharpExercises
             Console.WriteLine("4) esempio di utilizzo Console.WriteLine ReadKey");
             Console.WriteLine("5) prova Interface");
             Console.WriteLine("6) prova LINQ");
-             Console.WriteLine("7) #9 crea ordine completo");
+            Console.WriteLine("7) #9 crea ordine completo");
             Console.WriteLine("8) LeggiFileCSV ");
             Console.WriteLine("9) Ereditarieta");
             Console.WriteLine("10) Test Aggregate ");
@@ -428,20 +428,21 @@ namespace CSharpExercises
         }
 
 
-        static void testUtente() 
+        static void testUtente()
         {
-            User myuser = new User("Lorenzo",56);
-            myuser.AddToList(myuser);
 
+            
+            User myuser = new User("Lorenzo", 56);
             User myuser2 = new User("Caterina", 56);
-            myuser.AddToList(myuser2);
-
             User myuser3 = new User("Chiara", 56);
-            myuser.AddToList(myuser3);
-
-            myuser.WriteToFileCname();
 
 
+            Users myUsers = new Users();
+            myUsers.AddToList(myuser2);
+            myUsers.AddToList(myuser);
+            myUsers.AddToList(myuser3);
+
+            myUsers.WriteToFileCname(); // srive su disco
 
 
         }
@@ -449,7 +450,7 @@ namespace CSharpExercises
 
 
 
-         static void TestInferface()
+        static void TestInferface()
         {
             //----------------------------
             IBasket ItmpBasket = new Basket();  // utilizzo interfaccia

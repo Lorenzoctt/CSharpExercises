@@ -11,11 +11,12 @@ namespace ECommerce
     {
 
         private int _age;
-        private string Name;
+        private string _name;
+
+        //      protected Name {get; set }
 
 
-
-        public int Age
+        private int Age
         {
             get
             { return _age; }
@@ -32,58 +33,26 @@ namespace ECommerce
         }
 
 
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+
+        public User() { }
         public User(string nome, int eta)
         {
-            this.Name = nome;
+            this._name = nome;
             this.Age = eta;
         }
 
 
 
+    }  // end user
 
 
-
-        private static List<User> UsersList = new List<User>();
-        private const string usersC_Path = @"C:\Users\Lorenzo\Desktop\EserciziC#\CSharpExercises\Data\Users_C.csv";
-        public void WriteToFileCname()  // salvo la lista nel file 
-        {
-            string tempData = "";
-            List<string> tempUsersList = GetC();
-
-
-
-            foreach (string item in tempUsersList)
-            {
-                tempData = tempData + item + Environment.NewLine;
-            }
-
-            File.WriteAllText(usersC_Path, tempData); //   SOSTITUISCE SEMPRE System.UnauthorizedAccessException su estensioni conosciute
-
-            //File.AppendAllText(ArticlePath, tempData);
-        }
-
-
-
-
-        private static List<string> GetC()
-        {
-            IEnumerable<string> query =
-             from fieldtmp in UsersList
-             where fieldtmp.Name[0] == 'C'
-
-             select fieldtmp.Name;
-
-            return query.ToList();  // ritorna la  query
-
-        }
-
-        public void AddToList(User utente)
-        {
-            UsersList.Add(utente);
-        }
-
-
-    }
 }  //end ECommerce
 
 
