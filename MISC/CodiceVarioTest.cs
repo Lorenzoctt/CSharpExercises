@@ -344,6 +344,7 @@ namespace CSharpExercises
             Console.WriteLine("8) LeggiFileCSV ");
             Console.WriteLine("9) Ereditarieta");
             Console.WriteLine("10) Test Aggregate ");
+            Console.WriteLine("11) Test utente filtrato e stampato  ");
             Console.WriteLine("M) ESCI");
             Console.Write("\r\nSelect an option: ");
 
@@ -408,6 +409,13 @@ namespace CSharpExercises
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
                     return true;
+
+                case "11":
+                    testUtente();
+                    Console.WriteLine("Test utente filtrato e stampato  ");
+                    Console.ReadLine();
+                    return true;
+
                 case "M":
 
                     return false;
@@ -418,6 +426,27 @@ namespace CSharpExercises
             }
 
         }
+
+
+        static void testUtente() 
+        {
+            User myuser = new User("Lorenzo",56);
+            myuser.AddToList(myuser);
+
+            User myuser2 = new User("Caterina", 56);
+            myuser.AddToList(myuser2);
+
+            User myuser3 = new User("Chiara", 56);
+            myuser.AddToList(myuser3);
+
+            myuser.WriteToFileCname();
+
+
+
+
+        }
+
+
 
 
          static void TestInferface()

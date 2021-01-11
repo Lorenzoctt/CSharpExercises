@@ -13,6 +13,7 @@ namespace ECommerce
         public const string articlePath = @"C:\Users\Lorenzo\Desktop\EserciziC#\CSharpExercises\Data\Articles.csv";
         public const string orderDetailPath = @"C:\Users\Lorenzo\Desktop\EserciziC#\CSharpExercises\Data\orderDetail-details.csv";
         public const string basketPath = @"C:\Users\Lorenzo\Desktop\EserciziC#\CSharpExercises\Data\Baskets.csv";
+      
 
         public static Decimal? decNvl(string testo)
         {

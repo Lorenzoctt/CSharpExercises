@@ -67,6 +67,13 @@
       <FileName>Classes\Articles.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ECommerce.User">
+    <Position X="8.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAQAQAAAAAgCAAAAgIAAAAA=</HashCode>
+      <FileName>Classes\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="ECommerce.IBasket">
     <Position X="3" Y="1" Width="1.5" />
     <TypeIdentifier>
