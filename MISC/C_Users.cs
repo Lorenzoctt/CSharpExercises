@@ -5,14 +5,14 @@ using System.IO;
 
 namespace ECommerce
 {
-    class Users
+    class C_Users
     {
-        private static List<User> UsersList = new List<User>();
+        private static List<C_User> UsersList = new List<C_User>();
 
         // file dei soli utenti che iniziano con 'C'
         private const string usersC_Path = @"C:\Users\Lorenzo\Desktop\EserciziC#\CSharpExercises\Data\Users_C.csv";
 
-        public Users() { }
+        public C_Users() { }
 
         public void WriteToFileCname()  // salvo la lista nel file 
         {
@@ -47,11 +47,11 @@ namespace ECommerce
 
 
 
-        public void AddToList(User myUser)
+        public void AddToList(C_User myUser)
         {
             UsersList.Add(myUser);
 
-            List<User> myListausers = new List<User>();
+            List<C_User> myListausers = new List<C_User>();
         
         }
 

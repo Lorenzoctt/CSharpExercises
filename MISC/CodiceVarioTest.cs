@@ -108,7 +108,7 @@ namespace CSharpExercises
             Admin myAdmin = new Admin();
 
             myAdmin.SetAdministrator(true);
-            myAdmin.RegUser("lore", "cccc", "ore@aaa");
+            myAdmin.AggiungiUser("lore", "cccc", "ore@aaa");
 
             Console.WriteLine("myAdmin.Id_user: " + myAdmin.Id_user);
 
@@ -229,7 +229,7 @@ namespace CSharpExercises
             Customer myCustomer2 = new Customer("Alberto", "Bianchi", "alberto.bianchi@alice.it");
             Admin myAdmin = new Admin();
             myAdmin.SetAdministrator(true);
-            myAdmin.RegUser("lore", "ctt", "lore@aaa");
+            myAdmin.AggiungiUser("lore", "ctt", "lore@aaa");
 
 
             //Milestone 2
@@ -448,12 +448,12 @@ namespace CSharpExercises
         {
 
 
-            User myuser = new User("Lorenzo", 56);
-            User myuser2 = new User("Caterina", 56);
-            User myuser3 = new User("Chiara", 56);
+            C_User myuser = new C_User("Lorenzo", 56);
+            C_User myuser2 = new C_User("Caterina", 56);
+            C_User myuser3 = new C_User("Chiara", 56);
 
 
-            Users myUsers = new Users();
+            C_Users myUsers = new C_Users();
             myUsers.AddToList(myuser2);
             myUsers.AddToList(myuser);
             myUsers.AddToList(myuser3);

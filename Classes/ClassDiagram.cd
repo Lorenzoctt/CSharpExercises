@@ -4,14 +4,14 @@
     <Position X="2.99" Y="0.5" Height="0.291" Width="1.7" />
   </Comment>
   <Class Name="ECommerce.Customer">
-    <Position X="0.5" Y="0.5" Width="2.25" />
+    <Position X="0.5" Y="1.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAACQAwAgIAEAAAAIAAAAAAEACIAAQACAAACg=</HashCode>
+      <HashCode>AAAAAAAAAAAAwAgAAEAAAAIAAAAAAEAAAAAQACAAAAA=</HashCode>
       <FileName>Classes\Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ECommerce.Customers">
-    <Position X="0.5" Y="5.75" Width="1.5" />
+  <Class Name="ECommerce.Customers" Collapsed="true">
+    <Position X="0.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAQAAABAAAAAAgAAQAAAAAAAAAAAAAAAAAAgI=</HashCode>
       <FileName>Classes\Customers.cs</FileName>
@@ -41,7 +41,7 @@
   <Class Name="ECommerce.Admin">
     <Position X="3.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAQIAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Classes\Admin.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -53,7 +53,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ECommerce.Baskets">
+  <Class Name="ECommerce.Baskets" Collapsed="true">
     <Position X="3" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAABAAAAgAAAgQAAAEAAAAIAAAAI=</HashCode>
@@ -81,7 +81,14 @@
       <FileName>Classes\Users.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="ECommerce.IBasket">
+  <Class Name="CSharpExercises.User">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ECommerce.IBasket" Collapsed="true">
     <Position X="3" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>

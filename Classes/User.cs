@@ -2,64 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 
 namespace ECommerce
 {
-    class User
+    public abstract class User
     {
 
-        private int _age;
-        private string _name;
-       // protected string cosa;
+        protected int id_user;
+        protected string FirstName;
+        protected String LastName;
+        protected int Address;
+        protected int Cap;
+        protected string City;
+        protected string Email; //  meglio mettere una classe email per ottenere la validazione
+        protected string Password; // meglio mettere una proprità asc nascosta
 
-        //      protected Name {get; set }
-
-
-        private int Age
+        public int Id_user
         {
-            get
-            { return _age; }
+            get { return id_user; }
 
-            set
-            {
-                if (value >= 18)
-                {
-                    _age = value;
-                }
-                else
-                    throw new InvalidOperationException("L'eta inserita non è validas");
-            }
         }
 
+        public abstract void Logout();
+ 
 
-
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-
-
-        public User() { }
-        public User(string nome, int eta)
-        {
-            this._name = nome;
-            this.Age = eta;
-        }
-
-
-
-    }  // end user
-
-
-}  //end ECommerce
+        public abstract bool Login(string myPassword);
 
 
 
 
-
-
-
-
+    }
+}
