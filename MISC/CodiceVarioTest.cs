@@ -345,7 +345,8 @@ namespace CSharpExercises
             Console.WriteLine("9) Ereditarieta");
             Console.WriteLine("10) Test Aggregate ");
             Console.WriteLine("11) Test utente filtrato e stampato  ");
-            Console.WriteLine("11) Test query con piu campi  ");
+            Console.WriteLine("12) Test query con piu campi  ");
+            Console.WriteLine("13) Classe astratta  ");
             Console.WriteLine("M) ESCI");
             Console.Write("\r\nSelect an option: ");
 
@@ -423,6 +424,14 @@ namespace CSharpExercises
                     Console.ReadLine();
                     return true;
 
+
+                case "13":
+                    Console.WriteLine("Test utilizzo classe astratta  ");
+                    TestAstratta();
+                    Console.WriteLine("premere un tasto  ");
+                    Console.ReadLine();
+                    return true;
+
                 case "M":
 
                     return false;
@@ -438,7 +447,7 @@ namespace CSharpExercises
         static void testUtente()
         {
 
-            
+
             User myuser = new User("Lorenzo", 56);
             User myuser2 = new User("Caterina", 56);
             User myuser3 = new User("Chiara", 56);
@@ -465,6 +474,27 @@ namespace CSharpExercises
 
             Basket tmpBasket = new Basket(); // utilizzo classe
             tmpBasket.Buy();
+        }
+
+
+
+
+
+        static void TestAstratta()
+        {
+            ItalianhMeter myItalianMeter = new ItalianhMeter();
+            decimal myvelocitaIta = myItalianMeter.Speed(1500, 3000);
+            Console.WriteLine($" la velocità è : {myvelocitaIta} km/h");
+
+
+            Console.WriteLine($" la velocità è : {myItalianMeter.ConvertToEnglishSpeed(myvelocitaIta)} mph");
+
+
+
+
+
+
+
         }
     }
 }

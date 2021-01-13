@@ -8,6 +8,8 @@ namespace ECommerce
     class Users
     {
         private static List<User> UsersList = new List<User>();
+
+        // file dei soli utenti che iniziano con 'C'
         private const string usersC_Path = @"C:\Users\Lorenzo\Desktop\EserciziC#\CSharpExercises\Data\Users_C.csv";
 
         public Users() { }
