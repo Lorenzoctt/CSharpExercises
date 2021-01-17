@@ -3,10 +3,18 @@
   <Comment CommentText="Cart=carrello">
     <Position X="2.99" Y="0.5" Height="0.291" Width="1.7" />
   </Comment>
-  <Class Name="ECommerce.Customer">
-    <Position X="0.5" Y="1.75" Width="2.25" />
+  <Class Name="ECommerce.Customer" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.25" />
+    <InheritanceLine Type="ECommerce.User" FixedFromPoint="true">
+      <Path>
+        <Point X="0.5" Y="1.312" />
+        <Point X="0.5" Y="2.375" />
+        <Point X="1.125" Y="2.375" />
+        <Point X="1.125" Y="2.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAwAgAAEAAAAIAAAAAAEAAAAAQACAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAwAgAAEAAAAIAAAAAAEAAAAAQAAAAACA=</HashCode>
       <FileName>Classes\Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,14 +46,14 @@
       <FileName>Classes\Article.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ECommerce.Admin">
-    <Position X="3.25" Y="6.25" Width="1.5" />
+  <Class Name="ECommerce.Admin" Collapsed="true">
+    <Position X="1.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAAAAAAAAQIAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAAAAAAAAAQAAAQIAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Classes\Admin.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ECommerce.Basket">
+  <Class Name="ECommerce.Basket" Collapsed="true">
     <Position X="4.75" Y="1.75" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAgAAAAAAAAAAAAAIAAAwACACEI=</HashCode>
@@ -67,25 +75,18 @@
       <FileName>Classes\Articles.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ECommerce.User">
-    <Position X="9.25" Y="5.5" Width="1.5" />
+  <Class Name="ECommerce.User" Collapsed="true">
+    <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAEAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAACQAAAAIAAAAAAIAAAAAAAACIAAQACAAAAg=</HashCode>
       <FileName>Classes\User.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ECommerce.Users">
+  <Class Name="ECommerce.C_Users">
     <Position X="8.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAARAAAAAAAQAAAAAACAAAAgAAAAAA=</HashCode>
-      <FileName>Classes\Users.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CSharpExercises.User">
-    <Position X="0.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
-      <FileName>User.cs</FileName>
+      <FileName>MISC\C_Users.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="ECommerce.IBasket" Collapsed="true">

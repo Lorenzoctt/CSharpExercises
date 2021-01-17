@@ -57,12 +57,14 @@ namespace CSharpExercises
         {
             Console.Clear();
             Console.WriteLine("Scegli una opzione :");
-            Console.WriteLine("1) Lista articoli ");
+            //Console.WriteLine("1a) Login cliente ");
+            //Console.WriteLine("1b) Login Amministratore ");
+            Console.WriteLine("1c) Lista articoli ");
             Console.WriteLine("2) Inserimento articolo  ");
             Console.WriteLine("3) Ricerca articolo per descrizione");
             Console.WriteLine("4) Cancellazione articolo ");
             Console.WriteLine("5) Inserimento articolo nel carrello  ");
-            //Console.WriteLine("6) Lista del carrello >>TODO");
+            Console.WriteLine("6) Lista del carrello");
             //Console.WriteLine("7) Crea ordine ");
             //Console.WriteLine("8) ");
             //Console.WriteLine("9) ");
@@ -73,7 +75,10 @@ namespace CSharpExercises
 
             switch (Console.ReadLine())
             {
-                case "1":
+
+
+
+                case "1c":
                     Console.Clear();
                     Console.WriteLine("LISTA ARTICOLI :");
                     Articles.List();
@@ -116,7 +121,7 @@ namespace CSharpExercises
 
                 case "6":
                     Console.Clear();
-                    Console.WriteLine("TODO");
+                    Baskets.List();
                     Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
@@ -164,6 +169,7 @@ namespace CSharpExercises
             }
 
         }
+
 
 
         static void RicercaArticolo()
