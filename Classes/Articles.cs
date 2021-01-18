@@ -7,7 +7,8 @@ using System.IO;
 //
 namespace ECommerce
 {
-    public class Articles
+    public class Articles : IArticles
+
     {
 
 
@@ -62,7 +63,7 @@ namespace ECommerce
             else
                 Console.WriteLine("Articolo <" + _article.Description + "> già presente nel database");
         }
-        public static int NewId()  // cerco l'ultimo numero inserito e lo incremento
+        private static int NewId()  // cerco l'ultimo numero inserito e lo incremento
         {
             if (myArticlesList.Count() > 0)
             {
@@ -147,9 +148,7 @@ namespace ECommerce
         }
 
 
-
-
-        //public static Article SearchArticle(string myDescription)  TODO 
+        //public static Article SearchArticle(string myDescription) // altro modo diricerca
         //{ 
         //    Article retArticle = (from item in myArticlesList
         //                          where item.Description == myDescription
@@ -158,7 +157,7 @@ namespace ECommerce
         //}
 
 
-        public static Boolean IsIdArticlePresent(string myDescription)  // ricerco per descrizione 
+    public static Boolean IsIdArticlePresent(string myDescription)  // ricerco per descrizione 
         {
             int ret = (
             from fieldtmp in myArticlesList
@@ -179,11 +178,15 @@ namespace ECommerce
                 tempData = tempData + item.List() + Environment.NewLine;
             }
 
-            File.WriteAllText(UtiCSV.articlePath, tempData); //   SOSTITUISCE SEMPRE System.UnauthorizedAccessException su estensioni conosciute
+            File.WriteAllText(UtiCSV.articlePath, tempData); 
 
             //File.AppendAllText(ArticlePath, tempData);
         }
 
+        public     List<Article> GetList()
+        {
+            return myArticlesList;
+        }
 
 
     }

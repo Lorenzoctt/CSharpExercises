@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Comment CommentText="Cart=carrello">
-    <Position X="2.99" Y="0.5" Height="0.291" Width="1.7" />
+    <Position X="2.99" Y="0.5" Height="0.291" Width="0.929" />
   </Comment>
   <Class Name="ECommerce.Customer" Collapsed="true">
     <Position X="0.5" Y="2.75" Width="1.25" />
@@ -19,27 +19,27 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ECommerce.Customers" Collapsed="true">
-    <Position X="0.75" Y="7" Width="1.5" />
+    <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAQAAABAAAAAAgAAQAAAAAAAAAAAAAAAAAAgI=</HashCode>
       <FileName>Classes\Customers.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ECommerce.OrderHeader">
-    <Position X="9.25" Y="0.75" Width="1.5" />
+    <Position X="9" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAQAAAAAAAAAAAAAAAAAAAAFAAIABAAAAAAAI=</HashCode>
       <FileName>Classes\OrderHeader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ECommerce.OrderDetail">
-    <Position X="9.25" Y="3.5" Width="1.5" />
+    <Position X="9" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAhAAAAAAAAAAAAAAAAAAAAAAAAAIAAIABAAAAAAAA=</HashCode>
       <FileName>Classes\OrderDetail.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ECommerce.Article">
+  <Class Name="ECommerce.Article" Collapsed="true">
     <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIQAAAAAAQAgAAAAIAAAAAAAgABAAIAAAAAAAACAAAI=</HashCode>
@@ -47,14 +47,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ECommerce.Admin" Collapsed="true">
-    <Position X="1.5" Y="2" Width="1.5" />
+    <Position X="1.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAAQAAAQIAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>Classes\Admin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ECommerce.Basket" Collapsed="true">
-    <Position X="4.75" Y="1.75" Width="1.25" />
+    <Position X="4.75" Y="2" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAgAAAAAAAAAAAAAIAAAwACACEI=</HashCode>
       <FileName>Classes\Basket.cs</FileName>
@@ -62,18 +62,20 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ECommerce.Baskets" Collapsed="true">
-    <Position X="3" Y="3" Width="1.5" />
+    <Position X="4.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAAAABAAAAgAAAgQAAAEAAAAIAAAAI=</HashCode>
-      <FileName>Classes\Basket.cs</FileName>
+      <HashCode>AAAAAAAAAAAABAAAAABAAAAgAAAgQAQAEAAAAIAAAAI=</HashCode>
+      <FileName>Classes\Baskets.cs</FileName>
+      <NewMemberFileName>Classes\Basket.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ECommerce.Articles">
-    <Position X="6.25" Y="4.75" Width="2.25" />
+  <Class Name="ECommerce.Articles" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAYAAAAACAAABAAAAAAAAAQAAAEIAAAAAAAAEKCCAAI=</HashCode>
       <FileName>Classes\Articles.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ECommerce.User" Collapsed="true">
     <Position X="0.5" Y="0.75" Width="1.5" />
@@ -83,17 +85,24 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ECommerce.C_Users">
-    <Position X="8.25" Y="7.75" Width="1.5" />
+    <Position X="7" Y="5.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAARAAAAAAAQAAAAAACAAAAgAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAARAEAAAAAQAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>MISC\C_Users.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="ECommerce.IBasket" Collapsed="true">
-    <Position X="3" Y="1" Width="1.5" />
+  <Interface Name="ECommerce.IBasket">
+    <Position X="4.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Classes\Ibasket.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ECommerce.IArticles" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Classes\IArticles.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
