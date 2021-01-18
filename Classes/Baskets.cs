@@ -72,14 +72,14 @@ namespace ECommerce
         {
 
 
-            IArticles ListaArticoli = new Articles();
+            IArticles IListaArticoli = new Articles();
 
            // ListaArticoli.GetList();
 
 
             decimal value =
               (from myBasket in myBasketList
-               join myArticle in ListaArticoli.GetList() on myBasket.Id_User equals myArticle.Id_article
+               join myArticle in IListaArticoli.GetList() on myBasket.Id_User equals myArticle.Id_article
                where myBasket.Id_User == myCustomer.Id_user
 
                select Convert.ToDecimal(myBasket.Quantity) * Convert.ToDecimal(myArticle.Price)).Sum();
