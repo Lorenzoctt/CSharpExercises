@@ -7,6 +7,6 @@ namespace ECommerce
 {
     public interface IArticles
     {
-        public  List<Article> GetList();
+        public List<Article> GetList();
     }
 }

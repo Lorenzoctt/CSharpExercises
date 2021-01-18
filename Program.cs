@@ -20,7 +20,7 @@ namespace CSharpExercises
 
     class Program
     {
-        private static Customer myCustomer = new Customer("Francesco", "Rossi", "francesco.rossi@alice.it");  // TODO FARE FUNZIONE LOGIN
+        private static Customer myDefaultCustomer = new Customer("Francesco", "Rossi", "francesco.rossi@alice.it");  // TODO FARE FUNZIONE LOGIN
         static void Main(string[] args)
         {
 
@@ -57,14 +57,15 @@ namespace CSharpExercises
         {
             Console.Clear();
             Console.WriteLine("Scegli una opzione :");
-            //Console.WriteLine("1a) Login cliente ");
+           // Console.WriteLine("1a) Login cliente TODO");
             //Console.WriteLine("1b) Login Amministratore ");
             Console.WriteLine("1c) Lista articoli ");
             Console.WriteLine("2) Inserimento articolo  ");
             Console.WriteLine("3) Ricerca articolo per descrizione");
             Console.WriteLine("4) Cancellazione articolo ");
             Console.WriteLine("5) Inserimento articolo nel carrello  ");
-            Console.WriteLine("6) Lista del carrello");
+            Console.WriteLine("6) Lista del carrello e importo totale");
+
             //Console.WriteLine("7) Crea ordine ");
             //Console.WriteLine("8) ");
             //Console.WriteLine("9) ");
@@ -122,6 +123,9 @@ namespace CSharpExercises
                 case "6":
                     Console.Clear();
                     Baskets.List();
+                    
+
+                    Console.WriteLine($"---   prezzo totale del cliente myDefaultCustomer è =   {Baskets.TotalPrice(myDefaultCustomer)}");
                     Console.WriteLine("---------------------------------------------");
                     Console.WriteLine("Premere un tasto per continuare");
                     Console.ReadLine();
@@ -241,7 +245,7 @@ namespace CSharpExercises
             if (!(myArticleSearched == null))
             {
                 Console.WriteLine("l'id ricercato è " + myArticleSearched.Id_article);
-                Basket myBasket = new Basket(myArticleSearched, quantita, myCustomer);
+                Basket myBasket = new Basket(myArticleSearched, quantita, myDefaultCustomer);
 
                 Baskets.AddtoList(myBasket);
 

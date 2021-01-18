@@ -183,7 +183,7 @@ namespace ECommerce
             //File.AppendAllText(ArticlePath, tempData);
         }
 
-        public     List<Article> GetList()
+        public      List<Article> GetList()
         {
             return myArticlesList;
         }
